@@ -1,0 +1,233 @@
+:root {
+  --green: #006747;
+}
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+}
+
+html {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem 2rem 0 2rem;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+}
+
+div.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 4rem 2rem;
+}
+
+section,
+footer {
+  margin: 0;
+  padding: 0;
+}
+
+section#field {
+  background-color: #1e1e1e;
+  color: white;
+}
+
+p.disclaimer {
+  font-style: italic;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ol {
+  margin: 0;
+  padding: 1.25rem;
+}
+
+ol#playerList li {
+  font-family: "carol-gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+li {
+  margin: 0;
+  padding: 0.125rem 0;
+}
+
+ul.golf li.where::before {
+  content: "📍 ";
+  margin-right: 0.5em;
+}
+
+ul.golf li.when::before {
+  content: "📆 ";
+  margin-right: 0.5em;
+}
+
+ul.golf li.golf::before {
+  content: "⛳️ ";
+  margin-right: 0.5em;
+}
+
+ul.golf li.score::before {
+  content: "🧮 ";
+  margin-right: 0.5em;
+}
+
+ul.golf li.money::before {
+  content: "💲 ";
+  margin-right: 0.5em;
+}
+
+ul.golf li.prize::before {
+  content: "💰";
+  margin-right: 0.5em;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+form input {
+  flex: 1;
+  padding: 0.5rem 0.25rem;
+}
+
+form button {
+  flex: 1;
+  padding: 0.5rem 0;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+  background-color: #1e1e1e;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: none;
+  margin: 4rem 0 -4rem 0;
+}
+
+.table-container {
+  overflow-x: auto;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  max-width: 100%;
+}
+
+th,
+td {
+  border: 1px solid #1e1e1e;
+  padding: 0.75rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr.player:hover {
+  background-color: orange;
+}
+
+th {
+  background-color: #f4f4f4;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+:is(tr#hc td, tr#par td) {
+  color: #787878;
+}
+
+:is(td.eagle, td.other) {
+  font-weight: bold;
+}
+
+td.bold {
+  font-weight: bold;
+}
+
+.player td {
+  position: relative;
+  text-align: center;
+  vertical-align: middle;
+}
+
+td.birdie::before,
+td.eagle::before,
+td.bogey::before,
+td.other::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  z-index: -1;
+}
+
+td.birdie::before {
+  border-color: orange; /* Circle outline for birdie */
+}
+
+td.eagle::before {
+  background-color: orange;
+}
+
+td.bogey::before {
+  border-radius: 0;
+  border-color: orange;
+}
+
+td.other::before {
+  border-radius: 0;
+  background-color: orange;
+}

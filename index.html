@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/assets/style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/kyo2osl.css" />
+    <title>Solstice</title>
+  </head>
+  <body>
+    <nav id="nav-container"></nav>
+
+    <section id="info">
+      <div class="container">
+        <h1>Solstice Golf Event | 高尔夫锦标赛</h1>
+        <p>
+          You are invited to participate in a 36-hole golf tournament to
+          celebrate the summer solstice. The event will follow all official
+          rules and extend throughout the day, taking advantage of the
+          solstice's extended daylight hours.
+        </p>
+        <ul class="golf">
+          <li class="where">Golf Club de l'Île de Montréal</li>
+          <li class="when">Saturday, June 21st, 2025</li>
+          <li class="golf">Morning Round: 18 Holes on Island</li>
+          <li class="golf">Afternoon Round: 18 Holes on Ireland</li>
+          <li class="score">
+            Scoring System:
+            <a href="https://en.wikipedia.org/wiki/Stableford" target="_blank"
+              >Stableford</a
+            >
+          </li>
+          <li class="money">
+            Cost:
+            <a href="https://www.cgimgolf.com/en/rates/" target="_blank"
+              >CGIM Green Fees</a
+            >
+            + $50 toward the purse
+          </li>
+          <li class="prize" id="prizeMoney">Total Purse:</li>
+        </ul>
+
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/yJGVo7ECL3E?si=gFs4K6s4Rp26Gc4T&amp;start=68"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </section>
+
+    <section id="registration">
+      <div class="container">
+        <h3>Registration</h3>
+        <p class="disclaimer">
+          All participants acknowledge that the event is designed primarily for
+          recreational purposes, involving a moderate degree of competition and,
+          at times, light-hearted camaraderie. Any actions undertaken in excess
+          of these parameters shall be deemed incongruent with the intended
+          nature of the event.
+        </p>
+        <p class="disclaimer">
+          By attending, participants consent to the inherent risks associated
+          with the sport of golf, including, but not limited to, poor shots,
+          lost balls, questionable course management strategies, and non-verbal
+          playing partners.
+        </p>
+        <form id="handicapForm">
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Name"
+            required
+            aria-label="Name"
+          />
+          <input
+            type="number"
+            id="handicap"
+            name="handicap"
+            min="0"
+            max="54"
+            required
+            placeholder="Handicap"
+            aria-label="Handicap"
+          />
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <section id="field">
+      <div class="container">
+        <h3>The Field</h3>
+        <p>Here's the full field that will be competing in the 2025 SGE:</p>
+        <ol id="playerList"></ol>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <img src="/assets/sponsor.png" alt="" />
+      </div>
+    </footer>
+    <script src="/assets/script.js"></script>
+  </body>
+</html>
