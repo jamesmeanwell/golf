@@ -2,10 +2,10 @@ const navBar = {
   html: `
   <ul>
     <li>
-      <a href="/">🌞</a>
+      <a href="index.html">🌞</a>
     </li>
     <li>
-      <a href="/pages/results.html">2025 Results</a>
+      <a href="../pages/results.html">2025 Results</a>
     </li>
   </ul>
     `,
