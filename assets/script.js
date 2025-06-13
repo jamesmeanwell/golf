@@ -80,7 +80,7 @@ const registration = {
       // Change the submit button text
       const submitButton = document.querySelector("button[type='submit']");
       if (submitButton) {
-        submitButton.textContent = "Fore Right!";
+        submitButton.textContent = "Play well.";
         submitButton.disabled = true; // Disable the button after submission
         submitButton.style.backgroundColor = "#006747"; // Change color to green
         submitButton.style.color = "white"; // Change text color to white
