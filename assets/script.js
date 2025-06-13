@@ -1,25 +1,33 @@
 const navBar = {
-  html: `
-  <ul>
-    <li>
-      <a href="index.html">🌞</a>
-    </li>
-    <li>
-      <a href="../pages/results.html">2025 Results</a>
-    </li>
-  </ul>
-    `,
+  getLinks: function () {
+    // Get current path depth
+    const path = window.location.pathname;
+    // If in a subfolder (e.g., /golf/pages/results.html), use ../ for root links
+    const isInPages = path.includes("/pages/");
+    const indexLink = isInPages ? "../index.html" : "index.html";
+    const resultsLink = isInPages ? "results.html" : "pages/results.html";
+    return { indexLink, resultsLink };
+  },
   insertNav: function () {
     document.addEventListener("DOMContentLoaded", () => {
+      const { indexLink, resultsLink } = this.getLinks();
       const navContainer = document.getElementById("nav-container");
       if (navContainer) {
-        navContainer.innerHTML = this.html;
+        navContainer.innerHTML = `
+          <ul>
+            <li>
+              <a href="${indexLink}">🌞</a>
+            </li>
+            <li>
+              <a href="${resultsLink}">2025 Results</a>
+            </li>
+          </ul>
+        `;
       }
     });
   },
 };
 
-// Call the function to insert the navigation
 navBar.insertNav();
 
 let playerCount = 0;
