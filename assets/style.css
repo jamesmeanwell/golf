@@ -169,10 +169,6 @@ td {
   vertical-align: middle;
 }
 
-tr.player:hover {
-  background-color: orange;
-}
-
 th {
   background-color: #f4f4f4;
   position: sticky;
@@ -215,7 +211,7 @@ td.other::before {
 }
 
 td.birdie::before {
-  border-color: orange; /* Circle outline for birdie */
+  border-color: orange;
 }
 
 td.eagle::before {
@@ -230,4 +226,8 @@ td.bogey::before {
 td.other::before {
   border-radius: 0;
   background-color: orange;
+}
+
+tr.player:hover {
+  background-color: #1e1e1e10;
 }
