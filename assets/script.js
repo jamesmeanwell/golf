@@ -30,81 +30,81 @@ const navBar = {
 
 navBar.insertNav();
 
-let playerCount = 0;
+// let playerCount = 0;
 
-const registration = {
-  init: function () {
-    const form = document.getElementById("handicapForm");
-    if (form) {
-      form.addEventListener("submit", this.addPlayer.bind(this));
-    }
-  },
-  addPlayer: function (event) {
-    event.preventDefault();
+// const registration = {
+//   init: function () {
+//     const form = document.getElementById("handicapForm");
+//     if (form) {
+//       form.addEventListener("submit", this.addPlayer.bind(this));
+//     }
+//   },
+//   addPlayer: function (event) {
+//     event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const handicap = document.getElementById("handicap").value;
+//     const name = document.getElementById("name").value;
+//     const handicap = document.getElementById("handicap").value;
 
-    const playerList = document.getElementById("playerList");
-    if (playerList) {
-      const listItem = document.createElement("li");
-      listItem.textContent = `${name}, ${handicap} handicap `;
+//     const playerList = document.getElementById("playerList");
+//     if (playerList) {
+//       const listItem = document.createElement("li");
+//       listItem.textContent = `${name}, ${handicap} handicap `;
 
-      const removeButton = document.createElement("button");
-      removeButton.textContent = "❌";
-      removeButton.style.marginLeft = "10px";
-      removeButton.addEventListener("click", () => {
-        if (
-          confirm(
-            "Are you sure you want to remove this player from the SGE tournament?"
-          )
-        ) {
-          playerList.removeChild(listItem);
-          playerCount--;
-          this.updatePrizeMoney();
-        }
-      });
+//       const removeButton = document.createElement("button");
+//       removeButton.textContent = "❌";
+//       removeButton.style.marginLeft = "10px";
+//       removeButton.addEventListener("click", () => {
+//         if (
+//           confirm(
+//             "Are you sure you want to remove this player from the SGE tournament?"
+//           )
+//         ) {
+//           playerList.removeChild(listItem);
+//           playerCount--;
+//           this.updatePrizeMoney();
+//         }
+//       });
 
-      listItem.appendChild(removeButton);
-      playerList.appendChild(listItem);
+//       listItem.appendChild(removeButton);
+//       playerList.appendChild(listItem);
 
-      playerCount++;
-      this.updatePrizeMoney();
+//       playerCount++;
+//       this.updatePrizeMoney();
 
-      // Clear the form fields
-      const form = document.getElementById("handicapForm");
-      if (form) {
-        form.reset();
-      }
+//       // Clear the form fields
+//       const form = document.getElementById("handicapForm");
+//       if (form) {
+//         form.reset();
+//       }
 
-      // Change the submit button text
-      const submitButton = document.querySelector("button[type='submit']");
-      if (submitButton) {
-        submitButton.textContent = "Play well.";
-        submitButton.disabled = true; // Disable the button after submission
-        submitButton.style.backgroundColor = "#006747"; // Change color to green
-        submitButton.style.color = "white"; // Change text color to white
-        submitButton.style.fontWeight = "bold"; // Make text bold
-        submitButton.style.cursor = "not-allowed"; // Change cursor to indicate it's disabled
-        submitButton.style.border = "none"; // Remove border for a cleaner look
-        submitButton.style.padding = "10px 20px"; // Add padding for better appearance
-        submitButton.style.borderRadius = "4px"; // Add rounded corners
-      }
-    }
-  },
-  updatePrizeMoney: function () {
-    const prizeElement = document.getElementById("prizeMoney");
-    if (prizeElement) {
-      prizeElement.textContent = "Total Purse: $" + playerCount * 50;
-    }
-  },
-};
+//       // Change the submit button text
+//       const submitButton = document.querySelector("button[type='submit']");
+//       if (submitButton) {
+//         submitButton.textContent = "Play well.";
+//         submitButton.disabled = true; // Disable the button after submission
+//         submitButton.style.backgroundColor = "#006747"; // Change color to green
+//         submitButton.style.color = "white"; // Change text color to white
+//         submitButton.style.fontWeight = "bold"; // Make text bold
+//         submitButton.style.cursor = "not-allowed"; // Change cursor to indicate it's disabled
+//         submitButton.style.border = "none"; // Remove border for a cleaner look
+//         submitButton.style.padding = "10px 20px"; // Add padding for better appearance
+//         submitButton.style.borderRadius = "4px"; // Add rounded corners
+//       }
+//     }
+//   },
+//   updatePrizeMoney: function () {
+//     const prizeElement = document.getElementById("prizeMoney");
+//     if (prizeElement) {
+//       prizeElement.textContent = "Total Purse: $" + playerCount * 50;
+//     }
+//   },
+// };
 
-const prizeMoney = {
-  // This object can be expanded with additional prize-related methods if needed
-};
+// const prizeMoney = {
+//   // This object can be expanded with additional prize-related methods if needed
+// };
 
-registration.init();
+// registration.init();
 
 const ScorecardManager = {
   fetchAndRenderScorecard: function () {
