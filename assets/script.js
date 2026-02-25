@@ -16,10 +16,10 @@ const navBar = {
         navContainer.innerHTML = `
           <ul>
             <li>
-              <a href="${indexLink}">🌞</a>
+              <a href="${indexLink}">⛳️</a>
             </li>
             <li>
-              <a href="${resultsLink}">2025 Results</a>
+              <a href="${resultsLink}">2026 Results</a>
             </li>
           </ul>
         `;
@@ -29,82 +29,6 @@ const navBar = {
 };
 
 navBar.insertNav();
-
-// let playerCount = 0;
-
-// const registration = {
-//   init: function () {
-//     const form = document.getElementById("handicapForm");
-//     if (form) {
-//       form.addEventListener("submit", this.addPlayer.bind(this));
-//     }
-//   },
-//   addPlayer: function (event) {
-//     event.preventDefault();
-
-//     const name = document.getElementById("name").value;
-//     const handicap = document.getElementById("handicap").value;
-
-//     const playerList = document.getElementById("playerList");
-//     if (playerList) {
-//       const listItem = document.createElement("li");
-//       listItem.textContent = `${name}, ${handicap} handicap `;
-
-//       const removeButton = document.createElement("button");
-//       removeButton.textContent = "❌";
-//       removeButton.style.marginLeft = "10px";
-//       removeButton.addEventListener("click", () => {
-//         if (
-//           confirm(
-//             "Are you sure you want to remove this player from the SGE tournament?"
-//           )
-//         ) {
-//           playerList.removeChild(listItem);
-//           playerCount--;
-//           this.updatePrizeMoney();
-//         }
-//       });
-
-//       listItem.appendChild(removeButton);
-//       playerList.appendChild(listItem);
-
-//       playerCount++;
-//       this.updatePrizeMoney();
-
-//       // Clear the form fields
-//       const form = document.getElementById("handicapForm");
-//       if (form) {
-//         form.reset();
-//       }
-
-//       // Change the submit button text
-//       const submitButton = document.querySelector("button[type='submit']");
-//       if (submitButton) {
-//         submitButton.textContent = "Play well.";
-//         submitButton.disabled = true; // Disable the button after submission
-//         submitButton.style.backgroundColor = "#006747"; // Change color to green
-//         submitButton.style.color = "white"; // Change text color to white
-//         submitButton.style.fontWeight = "bold"; // Make text bold
-//         submitButton.style.cursor = "not-allowed"; // Change cursor to indicate it's disabled
-//         submitButton.style.border = "none"; // Remove border for a cleaner look
-//         submitButton.style.padding = "10px 20px"; // Add padding for better appearance
-//         submitButton.style.borderRadius = "4px"; // Add rounded corners
-//       }
-//     }
-//   },
-//   updatePrizeMoney: function () {
-//     const prizeElement = document.getElementById("prizeMoney");
-//     if (prizeElement) {
-//       prizeElement.textContent = "Total Purse: $" + playerCount * 50;
-//     }
-//   },
-// };
-
-// const prizeMoney = {
-//   // This object can be expanded with additional prize-related methods if needed
-// };
-
-// registration.init();
 
 const ScorecardManager = {
   fetchAndRenderScorecard: function () {
@@ -118,14 +42,22 @@ const ScorecardManager = {
     const tables = {
       island: document.getElementById("scorecard-island"),
       ireland: document.getElementById("scorecard-ireland"),
+      falcon: document.getElementById("scorecard-falcon"),
     };
 
     for (const [course, players] of Object.entries(data)) {
       const tbody = tables[course].querySelector("tbody");
       const parRow = tbody.querySelector("#par");
       const parValues = Array.from(parRow.querySelectorAll("td")).map((td) =>
-        parseInt(td.textContent, 10)
+        parseInt(td.textContent, 10),
       );
+      const indexRow = tbody.querySelector("#hc");
+      const indexValues = Array.from(indexRow.querySelectorAll("td")).map(
+        (td) => parseInt(td.textContent, 10),
+      );
+
+      NetScoreManager.calculateNetScores(players, parValues, indexValues);
+      StablefordManager.calculateStablefordPoints(players, parValues);
 
       players.forEach((player) => {
         const outTotal = player.outScores.reduce((a, b) => a + b, 0);
@@ -158,6 +90,8 @@ const ScorecardManager = {
           ${inScoresHtml}
           <td class="bold">${inTotal}</td>
           <td class="bold">${total}</td>
+          <td class="bold">${player.netScores.reduce((a, b) => a + b, 0)}</td>
+          <td class="bold">${player.stablefordPoints}</td>
         `;
         tbody.appendChild(row);
       });
@@ -180,3 +114,96 @@ const ScorecardManager = {
 
 // To use the ScorecardManager
 ScorecardManager.fetchAndRenderScorecard();
+
+// Net Score Manager
+const NetScoreManager = {
+  calculateNetScores: function (players, parValues, indexValues) {
+    players.forEach((player) => {
+      player.netScores = player.outScores
+        .concat(player.inScores)
+        .map((score, i) => {
+          const index = indexValues[i];
+          // Calculate strokes based on handicap
+          let strokes = Math.floor(player.handicap / 18);
+          if (player.handicap % 18 >= index) {
+            strokes += 1;
+          }
+          return score - strokes;
+        });
+    });
+  },
+};
+
+// Stableford Manager
+const StablefordManager = {
+  calculateStablefordPoints: function (players, parValues) {
+    players.forEach((player) => {
+      player.stablefordPoints = player.netScores.reduce(
+        (totalPoints, netScore, i) => {
+          const par = parValues[i];
+          let points = 0;
+          if (netScore <= par - 3) {
+            points = 5; // Albatross or better
+          } else if (netScore === par - 2) {
+            points = 4; // Eagle
+          } else if (netScore === par - 1) {
+            points = 3; // Birdie
+          } else if (netScore === par) {
+            points = 2; // Par
+          } else if (netScore === par + 1) {
+            points = 1; // Bogey
+          }
+          return totalPoints + points;
+        },
+        0,
+      );
+    });
+  },
+};
+
+// Leaderboard Manager
+const leaderBoardManager = {
+  updateLeaderboard: function () {
+    const table = document.getElementById("leaderboard-table");
+    const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+    // Extract player data
+    const players = rows.map((row) => {
+      const cells = row.querySelectorAll("td");
+      const points = Array.from(cells)
+        .slice(2)
+        .map((cell) => parseInt(cell.textContent) || 0);
+      const totalPoints = points.reduce((acc, curr) => acc + curr, 0);
+      return {
+        row,
+        name: cells[0].textContent,
+        totalPoints,
+      };
+    });
+
+    // Sort players by total points
+    players.sort((a, b) => b.totalPoints - a.totalPoints);
+
+    // Update position and total columns
+    let currentPosition = 1;
+    players.forEach((player, index) => {
+      const previousPlayer = players[index - 1];
+      if (index > 0 && player.totalPoints === previousPlayer.totalPoints) {
+        player.position = `T${currentPosition}`;
+      } else {
+        currentPosition = index + 1;
+        player.position = currentPosition;
+      }
+      player.row.querySelector("th").textContent = player.position;
+      player.row.querySelector("td:nth-child(3)").textContent =
+        player.totalPoints;
+    });
+
+    // Reorder rows in the table
+    const tbody = table.querySelector("tbody");
+    players.forEach((player) => tbody.appendChild(player.row));
+  },
+};
+
+// Call this function whenever you update the points in the HTML
+leaderBoardManager.updateLeaderboard();

@@ -1,130 +1,233 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="assets/style.css" />
     <link rel="stylesheet" href="https://use.typekit.net/kyo2osl.css" />
-    <title>Solstice Golf Event</title>
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20100%20100%22%3E%3Ctext%20y=%22.9em%22%20font-size=%2290%22%3E%E2%9B%B3%EF%B8%8F%3C/text%3E%3C/svg%3E"
+    />
+    <title>Summer Signature Series</title>
   </head>
   <body>
     <nav id="nav-container"></nav>
 
     <section id="info">
       <div class="container">
-        <h1>Solstice Golf Event: Golf's Second Longest Day</h1>
-        <p>
-          You are invited to participate in a 36-hole golf tournament to
-          celebrate the summer solstice. The event will follow all official
-          rules and extend throughout the day, taking advantage of the
-          solstice's extended daylight hours.
+        <h1 class="large-text">Summer Signature Series</h1>
+        <p class="large-text">
+          The Summer Signature Series comprises four events, taking place in
+          May, June, July, and August (details below). Each event will recognise
+          an individual winner, determined by the highest individual net
+          Stableford score of the day.
         </p>
+
+        <p class="large-text">
+          At the conclusion of the series, an overall Series Champion will be
+          announced. This title will go to the golfer who accumulates the most
+          points across the series, based on their best four scores from a
+          possible six rounds. For instance, if a participant plays all six
+          rounds, only their top four scores will contribute to the overall
+          standings.
+        </p>
+        <p class="large-text">
+          A $20 cash entry fee applies to each event. Half of the fee will be
+          awarded to the winner of the individual event, while the remaining
+          half will be added to the cumulative prize fund for the Series
+          Champion.
+        </p>
+        <div class="scoring-system">
+          <h2>Net Stableford Scoring System (per Hole)</h2>
+          <ul>
+            <li><strong>0 Points:</strong> Double Bogey (+2) or Worse</li>
+            <li><strong>1 Point:</strong> Bogey (+1)</li>
+            <li><strong>2 Points:</strong> Par (E)</li>
+            <li><strong>3 Points:</strong> Birdie (-1)</li>
+            <li><strong>4 Points:</strong> Eagle (-2)</li>
+            <li><strong>5 Points:</strong> Albatross (-3) or Better</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="leaderboard">
+      <div class="container">
+        <h3>Series Champion: Leaderboard</h3>
+        <div class="table-container">
+          <table id="leaderboard-table">
+            <caption>
+              Golf Leaderboard
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">P.</th>
+                <th scope="col">Player</th>
+                <th scope="col">Total</th>
+                <th scope="col">Falcon</th>
+                <th scope="col">Lachute (T)</th>
+                <th scope="col">Lachute (W)</th>
+                <th scope="col">Grand Mère</th>
+                <th scope="col">CGIM (Isl.)</th>
+                <th scope="col">CGIM (Ire.)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Example row for player data -->
+              <tr>
+                <th scope="row"></th>
+                <td>D. Bourdeau</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>J. Dabrowski</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>N. Kasturi</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>A. Lavoie</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>J. Meanwell</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>S. Parsons</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>A. Sheaf</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>B. Williams</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>E.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th scope="row"></th>
+                <td>J.</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <h2 style="margin-top: 0">Hudson Invitational: 18 Holes</h2>
         <ul class="golf">
-          <li class="where">Golf Club de l'Île de Montréal</li>
-          <li class="when">Saturday, June 21st, 2025</li>
-          <li class="golf">Morning Round: 18 Holes on Island (08:37, 08:47)</li>
-          <li class="golf">
-            Afternoon Round: 18 Holes on Ireland (15:20, 15:30)
-          </li>
-          <li class="score">
-            Scoring System:
-            <a href="https://en.wikipedia.org/wiki/Stableford" target="_blank"
-              >Stableford</a
-            >
-          </li>
-          <li class="money">
-            Cost:
-            <a href="https://www.cgimgolf.com/en/rates/" target="_blank"
-              >CGIM Green Fees</a
-            >
-            + $50 toward the purse
-          </li>
-          <li class="prize" id="prizeMoney">Current Purse: $150</li>
+          <li class="where">Falcon Golf Club</li>
+          <li class="when">May 2026</li>
+          <li class="golf">Morning Round: 18 Holes, Time TBD</li>
+          <li class="score">Scoring System: Individual Net Stableford</li>
+          <li class="money">Cost: Green Fees + $20 entry fee</li>
         </ul>
-
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/yJGVo7ECL3E?si=gFs4K6s4Rp26Gc4T&amp;start=68"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
+        <h2>Lachute Classic: 36 Holes</h2>
+        <ul class="golf">
+          <li class="where">Club de golf Lachute</li>
+          <li class="when">June 2026</li>
+          <li class="golf">Morning Round: 18 Holes at Thompson, Time TBD</li>
+          <li class="golf">Afternoon Round: 18 Holes at Watson, Time TBD</li>
+          <li class="score">Scoring System: Individual Net Stableford</li>
+          <li class="money">Cost: Green Fees + $20 entry fee</li>
+        </ul>
+        <h2>Golden Age Open: 18 Holes</h2>
+        <ul class="golf">
+          <li class="where">Club de golf de Grand-Mère</li>
+          <li class="when">July 2026</li>
+          <li class="golf">Morning Round: 18 Holes, Time TBD</li>
+          <li class="score">Scoring System: Individual Net Stableford</li>
+          <li class="money">Cost: Green Fees + $20 entry fee</li>
+        </ul>
+        <h2>East Île Championship: 36 Holes</h2>
+        <ul class="golf">
+          <li class="where">Club de Golf de l'Île de Montréal</li>
+          <li class="when">August 2026</li>
+          <li class="golf">Morning Round: 18 Holes at Island, Time TBD</li>
+          <li class="golf">Afternoon Round: 18 Holes at Ireland, Time TBD</li>
+          <li class="score">Scoring System: Individual Net Stableford</li>
+          <li class="money">Cost: Green Fees + $20 entry fee</li>
+        </ul>
       </div>
     </section>
-
-    <section id="registration">
-      <div class="container">
-        <h3>Registration</h3>
-        <p class="disclaimer">
-          All participants acknowledge that the event is designed primarily for
-          recreational purposes, involving a moderate degree of competition and,
-          at times, light-hearted camaraderie. Any actions undertaken in excess
-          of these parameters shall be deemed incongruent with the intended
-          nature of the event.
-        </p>
-        <p class="disclaimer">
-          By attending, participants consent to the inherent risks associated
-          with the sport of golf, including, but not limited to, poor shots,
-          lost balls, questionable course management strategies, and non-verbal
-          playing partners.
-        </p>
-        <a
-          href="mailto:james.meanwell1@gmail.com?subject=I'm%20in&body=Name:%0AHandicap:"
-          >sgtm</a
-        >
-
-        <!-- <form id="handicapForm">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-            required
-            aria-label="Name"
-          />
-          <input
-            type="number"
-            id="handicap"
-            name="handicap"
-            min="0"
-            max="54"
-            required
-            placeholder="Handicap"
-            aria-label="Handicap"
-          />
-
-          <button type="submit">Submit</button>
-        </form> -->
-      </div>
-    </section>
-
-    <section id="field">
-      <div class="container">
-        <h3>The Field</h3>
-        <p>
-          There are a total of eight spots available to compete in the 2025 SGE:
-        </p>
-        <ol id="playerList">
-          <li>James Meanwell, 8</li>
-          <li>Richard Shear, 12</li>
-          <li>Nikhil Kasturi, 16</li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ol>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <img src="assets/sponsor.png" alt="" />
-      </div>
-    </footer>
     <script src="assets/script.js"></script>
   </body>
 </html>

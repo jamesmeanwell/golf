@@ -1,5 +1,5 @@
 :root {
-  --green: #006747;
+  --green: #00563f;
 }
 * {
   font-family: Arial, Helvetica, sans-serif;
@@ -15,6 +15,19 @@ html {
 body {
   margin: 0;
   padding: 0;
+}
+
+h2 {
+  margin-top: 4rem;
+}
+
+.large-text {
+  font-size: 1.25rem;
+  color: var(--green);
+}
+
+.scoring-system {
+  color: var(--green);
 }
 
 nav {
@@ -48,9 +61,9 @@ footer {
   padding: 0;
 }
 
-section#field {
-  background-color: #1e1e1e;
-  color: white;
+section#leaderboard {
+  background-color: var(--green);
+  color: #ffffff;
 }
 
 p.disclaimer {
@@ -68,11 +81,11 @@ ol {
   padding: 1.25rem;
 }
 
-ol#playerList li {
+ol#leaderboard li {
   font-family: "carol-gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.5rem;
+  font-size: 2rem;
   text-transform: capitalize;
 }
 
@@ -132,7 +145,6 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 2rem 0;
-  background-color: #1e1e1e;
 }
 
 img {
@@ -169,14 +181,19 @@ td {
   vertical-align: middle;
 }
 
-th {
-  background-color: #f4f4f4;
-  position: sticky;
-  top: 0;
-  z-index: 2;
+thead th {
+  background-color: var(--green);
+  color: white;
 }
 
-:is(tr#hc td, tr#par td) {
+td,
+th,
+td span {
+  color: var(--green);
+  font-size: 12px;
+}
+
+:is(tr#hc th, tr#par th, tr#hc td, tr#par td) {
   color: #787878;
 }
 
@@ -211,23 +228,52 @@ td.other::before {
 }
 
 td.birdie::before {
-  border-color: orange;
+  border-color: var(--green);
 }
 
 td.eagle::before {
-  background-color: orange;
+  background-color: var(--green);
 }
 
 td.bogey::before {
   border-radius: 0;
-  border-color: orange;
+  border-color: var(--green);
+}
+
+td.other span,
+td.eagle span {
+  color: white;
 }
 
 td.other::before {
   border-radius: 0;
-  background-color: orange;
+  background-color: var(--green);
 }
 
 tr.player:hover {
   background-color: #1e1e1e10;
+}
+
+/* Leaderboard Table */
+table#leaderboard-table caption {
+  display: none;
+}
+
+table#leaderboard-table td,
+table#leaderboard-table th {
+  text-align: left;
+  vertical-align: middle;
+  background-color: transparent;
+  font-family: "carol-gothic", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: white;
+}
+
+table#leaderboard-table tr th,
+table#leaderboard-table tr td {
+  border: none;
+  border-bottom: 1px solid white;
 }
