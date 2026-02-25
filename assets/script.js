@@ -175,7 +175,27 @@ const leaderBoardManager = {
       const points = Array.from(cells)
         .slice(2)
         .map((cell) => parseInt(cell.textContent) || 0);
-      const totalPoints = points.reduce((acc, curr) => acc + curr, 0);
+
+      // Sort points in descending order and take the top 4
+      const sortedPoints = [...points].sort((a, b) => b - a);
+      const topFourPoints = sortedPoints.slice(0, 4);
+      const totalPoints = topFourPoints.reduce((acc, curr) => acc + curr, 0);
+
+      // Apply strikethrough to the two lowest scores if there are six scores
+      if (points.length === 6) {
+        const lowestTwo = sortedPoints.slice(-2);
+        let strikeCount = 0;
+        cells.forEach((cell, index) => {
+          const cellValue = parseInt(cell.textContent);
+          if (lowestTwo.includes(cellValue) && strikeCount < 2) {
+            cell.style.textDecoration = "line-through";
+            strikeCount++;
+          } else {
+            cell.style.textDecoration = "none";
+          }
+        });
+      }
+
       return {
         row,
         name: cells[0].textContent,
@@ -188,14 +208,18 @@ const leaderBoardManager = {
 
     // Update position and total columns
     let currentPosition = 1;
+    let lastScore = null;
+    let lastPosition = 1;
+
     players.forEach((player, index) => {
-      const previousPlayer = players[index - 1];
-      if (index > 0 && player.totalPoints === previousPlayer.totalPoints) {
-        player.position = `T${currentPosition}`;
+      if (index > 0 && player.totalPoints === lastScore) {
+        player.position = lastPosition;
       } else {
         currentPosition = index + 1;
         player.position = currentPosition;
+        lastPosition = currentPosition;
       }
+      lastScore = player.totalPoints;
       player.row.querySelector("th").textContent = player.position;
       player.row.querySelector("td:nth-child(3)").textContent =
         player.totalPoints;

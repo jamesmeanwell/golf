@@ -84,10 +84,6 @@ section#leaderboard {
   color: #ffffff;
 }
 
-p.disclaimer {
-  font-style: italic;
-}
-
 ul {
   list-style-type: none;
   margin: 0;
@@ -97,14 +93,6 @@ ul {
 ol {
   margin: 0;
   padding: 1.25rem;
-}
-
-ol#leaderboard li {
-  font-family: "carol-gothic", sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 2rem;
-  text-transform: capitalize;
 }
 
 li {
@@ -287,10 +275,6 @@ table#leaderboard-table th {
   font-size: 1rem;
   text-transform: capitalize;
   color: white;
-}
-
-table#leaderboard-table td {
-  font-family: "carol-gothic", sans-serif;
 }
 
 table#leaderboard-table tr th,
