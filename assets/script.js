@@ -5,21 +5,23 @@ const navBar = {
     // If in a subfolder (e.g., /golf/pages/results.html), use ../ for root links
     const isInPages = path.includes("/pages/");
     const indexLink = isInPages ? "../index.html" : "index.html";
-    const resultsLink = isInPages ? "results.html" : "pages/results.html";
-    return { indexLink, resultsLink };
+    const eventsLink = isInPages
+      ? "2026-events.html"
+      : "pages/2026-events.html";
+    return { indexLink, eventsLink };
   },
   insertNav: function () {
     document.addEventListener("DOMContentLoaded", () => {
-      const { indexLink, resultsLink } = this.getLinks();
+      const { indexLink, eventsLink } = this.getLinks();
       const navContainer = document.getElementById("nav-container");
       if (navContainer) {
         navContainer.innerHTML = `
           <ul>
             <li>
-              <a href="${indexLink}">⛳️</a>
+              <a href="${indexLink}">Summer Signature Series</a>
             </li>
             <li>
-              <a href="${resultsLink}">2026 Results</a>
+              <a href="${eventsLink}">2026 Events</a>
             </li>
           </ul>
         `;

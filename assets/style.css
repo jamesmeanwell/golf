@@ -2,7 +2,7 @@
   --green: #00563f;
 }
 * {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "bodoni-urw", serif;
   font-size: 1rem;
 }
 
@@ -17,17 +17,30 @@ body {
   padding: 0;
 }
 
+h1 {
+  font-size: 2rem;
+  color: var(--green);
+}
+
 h2 {
   margin-top: 4rem;
+  font-size: 1.25rem;
+}
+
+p {
+  font-size: 1.25rem;
 }
 
 .large-text {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
+}
+
+.green {
   color: var(--green);
 }
 
-.scoring-system {
-  color: var(--green);
+.small-text {
+  font-size: 1rem;
 }
 
 nav {
@@ -47,6 +60,10 @@ nav ul {
 
 nav ul li a {
   text-decoration: none;
+}
+
+a:visited {
+  color: var(--green);
 }
 
 div.container {
@@ -264,12 +281,15 @@ table#leaderboard-table th {
   text-align: left;
   vertical-align: middle;
   background-color: transparent;
-  font-family: "carol-gothic", sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1rem;
   text-transform: capitalize;
   color: white;
+}
+
+table#leaderboard-table td {
+  font-family: "carol-gothic", sans-serif;
 }
 
 table#leaderboard-table tr th,
