@@ -282,3 +282,44 @@ table#leaderboard-table tr td {
   border: none;
   border-bottom: 1px solid white;
 }
+
+td.one-stroke {
+  position: relative;
+}
+
+td.one-stroke::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+}
+
+td.two-strokes {
+  position: relative;
+}
+
+td.two-strokes::before,
+td.two-strokes::after {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+}
+
+td.two-strokes::before {
+  top: 4px;
+  right: 9px; /* Adjusted to position the first dot */
+}
+
+td.two-strokes::after {
+  top: 4px;
+  right: 4px; /* Adjusted to position the second dot */
+}

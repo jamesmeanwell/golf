@@ -2,8 +2,8 @@
   "falcon": [
     {
       "name": "D. Bourdeau",
-      "handicap": 0,
-      "outScores": [3, 5, 4, 3, 4, 4, 4, 5, 3],
+      "handicap": 16,
+      "outScores": [3, 3, 4, 6, 4, 4, 4, 5, 3],
       "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
     },
     {

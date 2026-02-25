@@ -73,7 +73,8 @@ const ScorecardManager = {
           .map((score, index) => {
             const par = parValues[index];
             const scoreClass = this.getScoreClass(score, par);
-            return `<td class="${scoreClass}"><span>${score}</span></td>`;
+            const strokeClass = player.strokeClasses[index];
+            return `<td class="${scoreClass} ${strokeClass}"><span>${score}</span></td>`;
           })
           .join("");
 
@@ -81,7 +82,8 @@ const ScorecardManager = {
           .map((score, index) => {
             const par = parValues[index + 10]; // Offset by 10 for the "in" scores
             const scoreClass = this.getScoreClass(score, par);
-            return `<td class="${scoreClass}"><span>${score}</span></td>`;
+            const strokeClass = player.strokeClasses[index + 9]; // Offset by 9 for the "in" scores
+            return `<td class="${scoreClass} ${strokeClass}"><span>${score}</span></td>`;
           })
           .join("");
 
@@ -125,14 +127,24 @@ const NetScoreManager = {
         .concat(player.inScores)
         .map((score, i) => {
           const index = indexValues[i];
-          // Calculate strokes based on handicap
           let strokes = Math.floor(player.handicap / 18);
           if (player.handicap % 18 >= index) {
             strokes += 1;
           }
+          player.strokeClasses = player.strokeClasses || [];
+          player.strokeClasses[i] = this.getStrokeClass(strokes);
           return score - strokes;
         });
     });
+  },
+
+  getStrokeClass: function (strokes) {
+    if (strokes === 1) {
+      return "one-stroke";
+    } else if (strokes === 2) {
+      return "two-strokes";
+    }
+    return "";
   },
 };
 
