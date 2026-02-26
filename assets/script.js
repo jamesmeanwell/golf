@@ -150,6 +150,7 @@ const ScorecardManager = {
   renderScorecard: function (courses) {
     const tables = {
       falcon: document.getElementById("scorecard-falcon"),
+      lachute1T: document.getElementById("scorecard-lachute-t"),
       // Add other courses as needed
     };
 
@@ -286,3 +287,31 @@ const StablefordManager = {
     });
   },
 };
+
+// Select event results
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = {
+    "event-1": document.getElementById("event-1"),
+    "event-2": document.getElementById("event-2"),
+    "event-3": document.getElementById("event-3"),
+    "event-4": document.getElementById("event-4"),
+  };
+
+  const selector = document.getElementById("sectionSelector");
+
+  // Function to show the selected section
+  function showSection(selectedId) {
+    for (let id in sections) {
+      sections[id].style.display = id === selectedId ? "block" : "none";
+    }
+  }
+
+  // Set default visible section
+  showSection("event-1");
+  sectionSelector.value = "event-1";
+
+  // Event listener for dropdown change
+  selector.addEventListener("change", function () {
+    showSection(this.value);
+  });
+});

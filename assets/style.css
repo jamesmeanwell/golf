@@ -27,6 +27,15 @@ h2 {
   font-size: 1.25rem;
 }
 
+:is(
+  section#event-1 h2:first-child,
+  section#event-2 h2:first-child,
+  section#event-3 h2:first-child,
+  section#event-4 h2:first-child
+) {
+  margin-top: 0;
+}
+
 p {
   font-size: 1.25rem;
 }
@@ -134,20 +143,13 @@ ul.golf li.prize::before {
   margin-right: 0.5em;
 }
 
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-}
-
-form input {
-  flex: 1;
-  padding: 0.5rem 0.25rem;
-}
-
-form button {
-  flex: 1;
-  padding: 10px 20px;
+select {
+  color: var(--green);
+  border: none;
+  border-bottom: 1px solid var(--green);
+  width: 100%;
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
 }
 
 footer {
