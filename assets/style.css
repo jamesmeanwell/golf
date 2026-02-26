@@ -39,6 +39,10 @@ p {
   color: var(--green);
 }
 
+.grey {
+  color: #787878;
+}
+
 .small-text {
   font-size: 1rem;
 }
@@ -203,8 +207,8 @@ td span {
   color: #787878;
 }
 
-:is(td.eagle, td.other) {
-  font-weight: bold;
+:is(td.eagle, td.double-bogey) {
+  font-weight: normal;
 }
 
 td.bold {
@@ -220,7 +224,7 @@ td.bold {
 td.birdie::before,
 td.eagle::before,
 td.bogey::before,
-td.other::before {
+td.double-bogey::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -229,7 +233,7 @@ td.other::before {
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 2px solid transparent;
+  border: 1.5px solid transparent;
   z-index: -1;
 }
 
@@ -246,41 +250,18 @@ td.bogey::before {
   border-color: var(--green);
 }
 
-td.other span,
+td.double-bogey span,
 td.eagle span {
   color: white;
 }
 
-td.other::before {
+td.double-bogey::before {
   border-radius: 0;
   background-color: var(--green);
 }
 
 tr.player:hover {
   background-color: #1e1e1e10;
-}
-
-/* Leaderboard Table */
-table#leaderboard-table caption {
-  display: none;
-}
-
-table#leaderboard-table td,
-table#leaderboard-table th {
-  text-align: left;
-  vertical-align: middle;
-  background-color: transparent;
-  font-weight: 400;
-  font-style: normal;
-  font-size: 1rem;
-  text-transform: capitalize;
-  color: white;
-}
-
-table#leaderboard-table tr th,
-table#leaderboard-table tr td {
-  border: none;
-  border-bottom: 1px solid white;
 }
 
 td.one-stroke {
@@ -322,4 +303,27 @@ td.two-strokes::before {
 td.two-strokes::after {
   top: 4px;
   right: 4px; /* Adjusted to position the second dot */
+}
+
+/* Leaderboard Table */
+table#leaderboard-table caption {
+  display: none;
+}
+
+table#leaderboard-table td,
+table#leaderboard-table th {
+  text-align: left;
+  vertical-align: middle;
+  background-color: transparent;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1rem;
+  text-transform: capitalize;
+  color: white;
+}
+
+table#leaderboard-table tr th,
+table#leaderboard-table tr td {
+  border: none;
+  border-bottom: 1px solid white;
 }

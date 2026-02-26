@@ -1,70 +1,85 @@
 {
-  "falcon": [
-    {
-      "name": "D. Bourdeau",
-      "handicap": 16,
-      "outScores": [3, 3, 4, 6, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+  "courses": {
+    "falcon": {
+      "parValues": [4, 5, 4, 3, 4, 4, 4, 5, 3, 4, 5, 3, 5, 4, 3, 4, 3, 5],
+      "indexValues": [
+        11, 1, 9, 17, 7, 13, 5, 3, 15, 8, 4, 14, 2, 12, 16, 10, 18, 6
+      ],
+      "players": [
+        {
+          "name": "D. Bourdeau",
+          "handicap": 4,
+          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
+          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "J. Dabrowski",
+          "handicap": 20,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "J. G",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "N. Kasturi",
+          "handicap": 12,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "A. Lavoie",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "E. Marinacci",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "J. Meanwell",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "S. Parsons",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "A. Sheaf",
+          "handicap": 12,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "T. Vu",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
+          "name": "B. Williams",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        }
+      ]
     },
-    {
-      "name": "J. Dabrowski",
-      "handicap": 36,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "J. G",
-      "handicap": 0,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "N. Kasturi",
-      "handicap": 12,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "A. Lavoie",
-      "handicap": 0,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "E. Marinacci",
-      "handicap": 0,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "J. Meanwell",
-      "handicap": 7,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "S. Parsons",
-      "handicap": 0,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "A. Sheaf",
-      "handicap": 12,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "T. Vu",
-      "handicap": 0,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-    },
-    {
-      "name": "B. Williams",
-      "handicap": 0,
-      "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-      "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+    "lachute-t1": {
+      "parValues": [4, 3, 5, 5, 3, 4, 4, 5, 3, 4, 5, 4, 3, 5, 3, 4, 3, 5],
+      "indexValues": [
+        1, 9, 3, 17, 5, 11, 7, 15, 13, 2, 14, 12, 10, 4, 16, 6, 8, 18
+      ],
+      "players": []
     }
-  ]
+  }
 }

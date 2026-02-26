@@ -32,153 +32,16 @@ const navBar = {
 
 navBar.insertNav();
 
-const ScorecardManager = {
-  fetchAndRenderScorecard: function () {
-    fetch("../data/results.json")
-      .then((response) => response.json())
-      .then((data) => this.renderScorecard(data))
-      .catch((error) => console.error("Error fetching scorecard data:", error));
-  },
-
-  renderScorecard: function (data) {
-    const tables = {
-      island: document.getElementById("scorecard-island"),
-      ireland: document.getElementById("scorecard-ireland"),
-      falcon: document.getElementById("scorecard-falcon"),
-    };
-
-    for (const [course, players] of Object.entries(data)) {
-      const tbody = tables[course].querySelector("tbody");
-      const parRow = tbody.querySelector("#par");
-      const parValues = Array.from(parRow.querySelectorAll("td")).map((td) =>
-        parseInt(td.textContent, 10),
-      );
-      const indexRow = tbody.querySelector("#hc");
-      const indexValues = Array.from(indexRow.querySelectorAll("td")).map(
-        (td) => parseInt(td.textContent, 10),
-      );
-
-      NetScoreManager.calculateNetScores(players, parValues, indexValues);
-      StablefordManager.calculateStablefordPoints(players, parValues);
-
-      players.forEach((player) => {
-        const outTotal = player.outScores.reduce((a, b) => a + b, 0);
-        const inTotal = player.inScores.reduce((a, b) => a + b, 0);
-        const total = outTotal + inTotal;
-
-        const row = document.createElement("tr");
-        row.classList.add("player");
-
-        const outScoresHtml = player.outScores
-          .map((score, index) => {
-            const par = parValues[index];
-            const scoreClass = this.getScoreClass(score, par);
-            const strokeClass = player.strokeClasses[index];
-            return `<td class="${scoreClass} ${strokeClass}"><span>${score}</span></td>`;
-          })
-          .join("");
-
-        const inScoresHtml = player.inScores
-          .map((score, index) => {
-            const par = parValues[index + 10]; // Offset by 10 for the "in" scores
-            const scoreClass = this.getScoreClass(score, par);
-            const strokeClass = player.strokeClasses[index + 9]; // Offset by 9 for the "in" scores
-            return `<td class="${scoreClass} ${strokeClass}"><span>${score}</span></td>`;
-          })
-          .join("");
-
-        row.innerHTML = `
-          <th>${player.name}</th>
-          ${outScoresHtml}
-          <td class="bold">${outTotal}</td>
-          ${inScoresHtml}
-          <td class="bold">${inTotal}</td>
-          <td class="bold">${total}</td>
-          <td class="bold">${player.netScores.reduce((a, b) => a + b, 0)}</td>
-          <td class="bold">${player.stablefordPoints}</td>
-        `;
-        tbody.appendChild(row);
-      });
-    }
-  },
-
-  getScoreClass: function (score, par) {
-    if (score === par - 1) {
-      return "birdie";
-    } else if (score <= par - 2) {
-      return "eagle";
-    } else if (score === par + 1) {
-      return "bogey";
-    } else if (score >= par + 2) {
-      return "other";
-    }
-    return "";
-  },
-};
-
-// To use the ScorecardManager
-ScorecardManager.fetchAndRenderScorecard();
-
-// Net Score Manager
-const NetScoreManager = {
-  calculateNetScores: function (players, parValues, indexValues) {
-    players.forEach((player) => {
-      player.netScores = player.outScores
-        .concat(player.inScores)
-        .map((score, i) => {
-          const index = indexValues[i];
-          let strokes = Math.floor(player.handicap / 18);
-          if (player.handicap % 18 >= index) {
-            strokes += 1;
-          }
-          player.strokeClasses = player.strokeClasses || [];
-          player.strokeClasses[i] = this.getStrokeClass(strokes);
-          return score - strokes;
-        });
-    });
-  },
-
-  getStrokeClass: function (strokes) {
-    if (strokes === 1) {
-      return "one-stroke";
-    } else if (strokes === 2) {
-      return "two-strokes";
-    }
-    return "";
-  },
-};
-
-// Stableford Manager
-const StablefordManager = {
-  calculateStablefordPoints: function (players, parValues) {
-    players.forEach((player) => {
-      player.stablefordPoints = player.netScores.reduce(
-        (totalPoints, netScore, i) => {
-          const par = parValues[i];
-          let points = 0;
-          if (netScore <= par - 3) {
-            points = 5; // Albatross or better
-          } else if (netScore === par - 2) {
-            points = 4; // Eagle
-          } else if (netScore === par - 1) {
-            points = 3; // Birdie
-          } else if (netScore === par) {
-            points = 2; // Par
-          } else if (netScore === par + 1) {
-            points = 1; // Bogey
-          }
-          return totalPoints + points;
-        },
-        0,
-      );
-    });
-  },
-};
-
 // Leaderboard Manager
 const leaderBoardManager = {
   updateLeaderboard: function () {
     const table = document.getElementById("leaderboard-table");
+
+    // Check if the table exists
+    if (!table) {
+      return; // Exit the function if the table is not found
+    }
+
     const rows = Array.from(table.querySelectorAll("tbody tr"));
 
     // Extract player data
@@ -245,3 +108,181 @@ const leaderBoardManager = {
 
 // Call this function whenever you update the points in the HTML
 leaderBoardManager.updateLeaderboard();
+
+// Constants for score classes
+const SCORE_CLASSES = {
+  BIRDIE: "birdie",
+  EAGLE: "eagle",
+  BOGEY: "bogey",
+  DOUBLE_BOGEY: "double-bogey",
+  ONE_STROKE: "one-stroke",
+  TWO_STROKES: "two-strokes",
+};
+
+// Constants for Stableford points
+const STABLEFORD_POINTS = {
+  ALBATROSS: 5,
+  EAGLE: 4,
+  BIRDIE: 3,
+  PAR: 2,
+  BOGEY: 1,
+};
+
+// Constants for course data
+const COURSE_OFFSETS = {
+  IN_SCORES: 9,
+};
+
+// Ensure the table is present before fetching/rendering
+document.addEventListener("DOMContentLoaded", () => {
+  ScorecardManager.fetchAndRenderScorecard();
+});
+
+// Scorecard Manager
+const ScorecardManager = {
+  fetchAndRenderScorecard: function () {
+    fetch("../data/results.json")
+      .then((response) => response.json())
+      .then((data) => this.renderScorecard(data.courses))
+      .catch((error) => console.error("Error fetching scorecard data:", error));
+  },
+
+  renderScorecard: function (courses) {
+    const tables = {
+      falcon: document.getElementById("scorecard-falcon"),
+      // Add other courses as needed
+    };
+
+    for (const [courseName, courseData] of Object.entries(courses)) {
+      const tbody = tables[courseName].querySelector("tbody");
+
+      // Compute nets (and stableford) for every player
+      NetScoreManager.calculateNetScores(
+        courseData.players,
+        courseData.parValues,
+        courseData.indexValues,
+      );
+      StablefordManager.calculateStablefordPoints(
+        courseData.players,
+        courseData.parValues,
+      );
+
+      courseData.players.forEach((player) => {
+        const outTotal = player.outScores.reduce((a, b) => a + b, 0);
+        const inTotal = player.inScores.reduce((a, b) => a + b, 0);
+        const total = outTotal + inTotal;
+
+        const row = document.createElement("tr");
+        row.classList.add("player");
+
+        const outScoresHtml = this.generateScoresHtml(
+          player.outScores,
+          courseData.parValues,
+          0,
+          player.strokeClasses,
+        );
+        const inScoresHtml = this.generateScoresHtml(
+          player.inScores,
+          courseData.parValues,
+          COURSE_OFFSETS.IN_SCORES,
+          player.strokeClasses,
+        );
+
+        row.innerHTML = `
+          <th>${player.name}</th>
+          ${outScoresHtml}
+          <td class="bold">${outTotal}</td>
+          ${inScoresHtml}
+          <td class="bold">${inTotal}</td>
+          <td class="bold">${total}</td>
+          <td class="net">${player.netScores.reduce((a, b) => a + b, 0)}</td>
+          <td class="bold stableford">${player.stablefordPoints}</td>
+        `;
+        tbody.appendChild(row);
+      });
+    }
+  },
+
+  generateScoresHtml: function (
+    scores,
+    parValues,
+    offset = 0,
+    strokeClasses = [],
+  ) {
+    return scores
+      .map((score, index) => {
+        const par = parValues[index + offset];
+        const scoreClass = this.getScoreClass(score, par);
+        const strokeClass = strokeClasses[index + offset] || "";
+        return `<td class="${scoreClass} ${strokeClass}"><span>${score}</span></td>`;
+      })
+      .join("");
+  },
+
+  getScoreClass: function (score, par) {
+    if (score === par - 1) {
+      return SCORE_CLASSES.BIRDIE;
+    } else if (score <= par - 2) {
+      return SCORE_CLASSES.EAGLE;
+    } else if (score === par + 1) {
+      return SCORE_CLASSES.BOGEY;
+    } else if (score >= par + 2) {
+      return SCORE_CLASSES.DOUBLE_BOGEY;
+    }
+    return "";
+  },
+};
+
+const NetScoreManager = {
+  calculateNetScores: function (players, parValues, indexValues) {
+    players.forEach((player) => {
+      player.netScores = player.outScores
+        .concat(player.inScores)
+        .map((score, i) => {
+          const index = indexValues[i];
+          let strokes = Math.floor(player.handicap / 18);
+          if (player.handicap % 18 >= index) {
+            strokes += 1;
+          }
+          player.strokeClasses = player.strokeClasses || [];
+          player.strokeClasses[i] = this.getStrokeClass(strokes);
+          return score - strokes;
+        });
+    });
+  },
+
+  getStrokeClass: function (strokes) {
+    if (strokes === 1) {
+      return SCORE_CLASSES.ONE_STROKE;
+    } else if (strokes === 2) {
+      return SCORE_CLASSES.TWO_STROKES;
+    }
+    return "";
+  },
+};
+
+const StablefordManager = {
+  calculateStablefordPoints: function (players, parValues) {
+    players.forEach((player) => {
+      player.stablefordPoints = player.netScores.reduce(
+        (totalPoints, netScore, i) => {
+          const par = parValues[i];
+          let points = 0;
+          if (netScore <= par - 3) {
+            points = STABLEFORD_POINTS.ALBATROSS;
+          } else if (netScore === par - 2) {
+            points = STABLEFORD_POINTS.EAGLE;
+          } else if (netScore === par - 1) {
+            points = STABLEFORD_POINTS.BIRDIE;
+          } else if (netScore === par) {
+            points = STABLEFORD_POINTS.PAR;
+          } else if (netScore === par + 1) {
+            points = STABLEFORD_POINTS.BOGEY;
+          }
+          return totalPoints + points;
+        },
+        0,
+      );
+    });
+  },
+};
