@@ -79,70 +79,35 @@
       "indexValues": [
         1, 9, 3, 17, 5, 11, 7, 15, 13, 2, 14, 12, 10, 4, 16, 6, 8, 18
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
-        }
-      ]
+      "players": []
     },
     "lachute2W2026": {
       "parValues": [5, 3, 4, 5, 3, 4, 4, 4, 4, 3, 4, 4, 5, 4, 4, 4, 3, 5],
       "indexValues": [
         17, 11, 15, 5, 13, 1, 9, 7, 3, 16, 10, 12, 8, 6, 4, 2, 14, 18
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
-        }
-      ]
+      "players": []
     },
     "gm2026": {
       "parValues": [5, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 3, 5, 4, 4, 3, 4],
       "indexValues": [
         7, 5, 9, 17, 15, 3, 11, 13, 1, 4, 8, 16, 14, 12, 18, 6, 10, 2
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
-        }
-      ]
+      "players": []
     },
     "cgimIsl2026": {
       "parValues": [4, 3, 4, 4, 4, 5, 4, 5, 3, 4, 3, 4, 4, 3, 5, 3, 4, 4],
       "indexValues": [
         9, 17, 3, 7, 5, 11, 1, 13, 15, 2, 14, 6, 10, 16, 18, 12, 8, 4
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
-        }
-      ]
+      "players": []
     },
     "cgimIre2026": {
       "parValues": [4, 5, 3, 4, 5, 3, 4, 4, 4, 4, 4, 4, 3, 5, 4, 3, 4, 4],
       "indexValues": [
         7, 11, 17, 1, 15, 13, 3, 9, 5, 2, 6, 4, 18, 12, 10, 16, 8, 14
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
-        }
-      ]
+      "players": []
     }
   }
 }

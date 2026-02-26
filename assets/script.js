@@ -85,6 +85,7 @@ const leaderBoardManager = {
     let currentPosition = 1;
     let lastScore = null;
     let lastPosition = 1;
+    const positionCount = {};
 
     players.forEach((player, index) => {
       if (index > 0 && player.totalPoints === lastScore) {
@@ -95,7 +96,18 @@ const leaderBoardManager = {
         lastPosition = currentPosition;
       }
       lastScore = player.totalPoints;
-      player.row.querySelector("th").textContent = player.position;
+      // Count occurrences of each position
+      positionCount[player.position] =
+        (positionCount[player.position] || 0) + 1;
+    });
+
+    players.forEach((player) => {
+      // Add "T" if the position occurs more than once
+      const positionText =
+        positionCount[player.position] > 1
+          ? `T${player.position}`
+          : player.position;
+      player.row.querySelector("th").textContent = positionText;
       player.row.querySelector("td:nth-child(3)").textContent =
         player.totalPoints;
     });
