@@ -149,8 +149,12 @@ const ScorecardManager = {
 
   renderScorecard: function (courses) {
     const tables = {
-      falcon: document.getElementById("scorecard-falcon"),
-      lachute1T: document.getElementById("scorecard-lachute-t"),
+      falcon2026: document.getElementById("scorecard-falcon-2026"),
+      lachute1T2026: document.getElementById("scorecard-lachute-t-2026"),
+      lachute2W2026: document.getElementById("scorecard-lachute-w-2026"),
+      gm2026: document.getElementById("scorecard-gm-2026"),
+      cgimIsl2026: document.getElementById("scorecard-cgim-isl-2026"),
+      cgimIre2026: document.getElementById("scorecard-cgim-ire-2026"),
       // Add other courses as needed
     };
 
