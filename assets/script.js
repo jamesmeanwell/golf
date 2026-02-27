@@ -331,3 +331,44 @@ document.addEventListener("DOMContentLoaded", function () {
     showSection(this.value);
   });
 });
+
+// Sort individual event scorecards by total, net, or points
+const TableSorter = {
+  init: function () {
+    const tables = document.querySelectorAll(".sortable");
+    tables.forEach((table) => {
+      const headers = table.querySelectorAll("th");
+      headers.forEach((header, index) => {
+        if (
+          header.classList.contains("net") ||
+          header.classList.contains("points") ||
+          header.classList.contains("total")
+        ) {
+          header.addEventListener("click", () =>
+            this.sortTable(table, index, header.classList.contains("points")),
+          );
+        }
+      });
+    });
+  },
+
+  sortTable: function (table, columnIndex, isDescending) {
+    const tbody = table.querySelector("tbody");
+    const rows = Array.from(tbody.querySelectorAll("tr")).filter(
+      (row) => !row.id,
+    );
+
+    rows.sort((a, b) => {
+      const aText = a.cells[columnIndex].textContent.trim();
+      const bText = b.cells[columnIndex].textContent.trim();
+      const aValue = aText === "—" ? Infinity : parseFloat(aText);
+      const bValue = bText === "—" ? Infinity : parseFloat(bText);
+
+      return isDescending ? bValue - aValue : aValue - bValue;
+    });
+
+    rows.forEach((row) => tbody.appendChild(row));
+  },
+};
+
+document.addEventListener("DOMContentLoaded", () => TableSorter.init());

@@ -332,3 +332,7 @@ table#leaderboard-table tr td {
   border: none;
   border-bottom: 1px solid white;
 }
+
+:is(th.total, th.net, th.points) {
+  cursor: pointer;
+}
