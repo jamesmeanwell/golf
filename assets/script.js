@@ -4,10 +4,8 @@ const navBar = {
     const path = window.location.pathname;
     // If in a subfolder (e.g., /golf/pages/results.html), use ../ for root links
     const isInPages = path.includes("/pages/");
-    const indexLink = isInPages ? "../index.html" : "index.html";
-    const eventsLink = isInPages
-      ? "2026-events.html"
-      : "pages/2026-events.html";
+    const indexLink = isInPages ? "../index" : "index";
+    const eventsLink = isInPages ? "2026-events" : "pages/2026-events";
     return { indexLink, eventsLink };
   },
   insertNav: function () {
@@ -18,7 +16,7 @@ const navBar = {
         navContainer.innerHTML = `
           <ul>
             <li>
-              <a href="${indexLink}">Summer Signature Series</a>
+              <a href="${indexLink}">Island Signature Series</a>
             </li>
             <li>
               <a href="${eventsLink}">2026 Events</a>
