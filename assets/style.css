@@ -235,8 +235,8 @@ td.double-bogey::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 24px;
-  height: 24px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   border: 1.5px solid transparent;
   z-index: -1;
@@ -281,7 +281,7 @@ td.one-stroke::after {
   background-color: black;
   border-radius: 50%;
   position: absolute;
-  top: 4px;
+  top: 2.5px;
   right: 4px;
 }
 
@@ -301,12 +301,12 @@ td.two-strokes::after {
 }
 
 td.two-strokes::before {
-  top: 4px;
+  top: 2.5px;
   right: 9px; /* Adjusted to position the first dot */
 }
 
 td.two-strokes::after {
-  top: 4px;
+  top: 2.5px;
   right: 4px; /* Adjusted to position the second dot */
 }
 

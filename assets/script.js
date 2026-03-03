@@ -2,7 +2,7 @@ const navBar = {
   getLinks: function () {
     // Get current path depth
     const path = window.location.pathname;
-    // If in a subfolder (e.g., /golf/pages/results.html), use ../ for root links
+    // If in a subfolder (e.g., /golf/pages/results), use ../ for root links
     const isInPages = path.includes("/pages/");
     const indexLink = isInPages ? "../index" : "index";
     const eventsLink = isInPages ? "2026-events" : "pages/2026-events";
@@ -320,13 +320,22 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
 
-  // Set default visible section
-  showSection("event-1");
-  sectionSelector.value = "event-1";
+  // Check if there's a hash in the URL
+  const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+  if (hash && sections[hash]) {
+    showSection(hash);
+    selector.value = hash;
+  } else {
+    // Set default visible section
+    showSection("event-1");
+    selector.value = "event-1";
+  }
 
   // Event listener for dropdown change
   selector.addEventListener("change", function () {
     showSection(this.value);
+    // Update the URL hash without reloading the page
+    window.history.pushState(null, null, `#${this.value}`);
   });
 });
 
