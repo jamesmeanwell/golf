@@ -16,10 +16,10 @@ const navBar = {
         navContainer.innerHTML = `
           <ul>
             <li>
-              <a href="${indexLink}">Island Signature Series</a>
+              <a href="${indexLink}">Leaderboard</a>
             </li>
             <li>
-              <a href="${eventsLink}">2026 Events</a>
+              <a href="${eventsLink}">2026 Event Results</a>
             </li>
           </ul>
         `;

@@ -1,5 +1,7 @@
 :root {
-  --green: #00563f;
+  --green: #13b05d;
+  --blue: #2976e5;
+  --yellow: #ffcf00;
 }
 * {
   font-family: "bodoni-urw", serif;
@@ -39,21 +41,37 @@ h2 {
 p {
   font-size: 1.25rem;
 }
+:is(p, h1, h2, h3 h4, h5 h6) {
+  margin: 2.5rem 0;
+}
 
 .large-text {
   font-size: 1.5rem;
+}
+
+.small-text {
+  font-size: 1rem;
+  margin-top: 0;
+}
+
+.event-title {
+  margin: 0;
 }
 
 .green {
   color: var(--green);
 }
 
-.grey {
-  color: #787878;
+.blue {
+  color: var(--blue);
 }
 
-.small-text {
-  font-size: 1rem;
+.yellow {
+  color: var(--yellow);
+}
+
+.grey {
+  color: #787878;
 }
 
 nav {
@@ -77,7 +95,10 @@ nav ul li a {
 
 a,
 a:visited {
-  color: var(--green);
+  padding: 0.25rem 1rem;
+  background-color: var(--green);
+  color: black;
+  border-radius: 4px;
 }
 
 div.container {
@@ -93,8 +114,7 @@ footer {
 }
 
 section#leaderboard {
-  background-color: var(--green);
-  color: #ffffff;
+  background-color: var(--yellow);
 }
 
 ul {
@@ -150,7 +170,7 @@ select {
   width: 100%;
   padding: 0.5rem 0;
   font-size: 1.25rem;
-  margin-top: 4rem;
+  margin-top: 2.5rem;
   background-color: transparent;
   border-radius: 0;
 }
@@ -180,6 +200,7 @@ iframe {
 .table-container {
   overflow-x: auto;
   width: 100%;
+  margin: 2.5rem 0;
 }
 
 table {
@@ -197,14 +218,13 @@ td {
 }
 
 thead th {
-  background-color: var(--green);
-  color: white;
+  background-color: var(--blue);
+  color: black;
 }
 
 td,
 th,
 td span {
-  color: var(--green);
   font-size: 12px;
 }
 
@@ -252,17 +272,12 @@ td.eagle::before {
 
 td.bogey::before {
   border-radius: 0;
-  border-color: var(--green);
-}
-
-td.double-bogey span,
-td.eagle span {
-  color: white;
+  border-color: var(--yellow);
 }
 
 td.double-bogey::before {
   border-radius: 0;
-  background-color: var(--green);
+  background-color: var(--yellow);
 }
 
 tr.player:hover {
@@ -324,13 +339,13 @@ table#leaderboard-table th {
   font-style: normal;
   font-size: 1rem;
   text-transform: capitalize;
-  color: white;
+  color: black;
 }
 
 table#leaderboard-table tr th,
 table#leaderboard-table tr td {
   border: none;
-  border-bottom: 1px solid white;
+  border-bottom: 1px solid black;
 }
 
 :is(th.total, th.net, th.points) {
