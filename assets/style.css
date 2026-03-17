@@ -263,11 +263,11 @@ td.double-bogey::before {
 }
 
 td.birdie::before {
-  border-color: var(--green);
+  border-color: var(--yellow);
 }
 
 td.eagle::before {
-  background-color: var(--green);
+  background-color: var(--yellow);
 }
 
 td.bogey::before {
@@ -284,45 +284,45 @@ tr.player:hover {
   background-color: #1e1e1e10;
 }
 
-td.one-stroke {
+td span.one-stroke {
   position: relative;
 }
 
-td.one-stroke::after {
+td span.one-stroke::after {
   content: "";
   display: block;
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
   background-color: black;
   border-radius: 50%;
   position: absolute;
-  top: 2.5px;
-  right: 4px;
+  top: -10px;
+  right: -10px;
 }
 
-td.two-strokes {
+td span.two-strokes {
   position: relative;
 }
 
-td.two-strokes::before,
-td.two-strokes::after {
+td span.two-strokes::before,
+td span.two-strokes::after {
   content: "";
   display: block;
-  width: 3px;
-  height: 3px;
+  width: 2px;
+  height: 2px;
   background-color: black;
   border-radius: 50%;
   position: absolute;
 }
 
-td.two-strokes::before {
-  top: 2.5px;
-  right: 9px; /* Adjusted to position the first dot */
+td span.two-strokes::before {
+  top: -10px;
+  right: -10px;
 }
 
-td.two-strokes::after {
-  top: 2.5px;
-  right: 4px; /* Adjusted to position the second dot */
+td span.two-strokes::after {
+  top: -10px;
+  right: -6px;
 }
 
 /* Leaderboard Table */

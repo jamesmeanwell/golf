@@ -229,7 +229,7 @@ const ScorecardManager = {
         const par = parValues[index + offset];
         const scoreClass = this.getScoreClass(score, par);
         const strokeClass = strokeClasses[index + offset] || "";
-        return `<td class="${scoreClass} ${strokeClass}"><span>${score}</span></td>`;
+        return `<td class="${scoreClass}"><span class="${strokeClass}">${score}</span></td>`;
       })
       .join("");
   },
