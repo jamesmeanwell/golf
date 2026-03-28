@@ -114,7 +114,7 @@ nav ul li {
 nav ul li a {
   padding: 0.25rem 0.5rem;
   text-decoration: none;
-  font-size: 1.25rem;
+  font-size: 1.125rem;
 }
 
 :is(a, a:visited, a[id], a[id]:visited) {
@@ -132,11 +132,11 @@ nav ul li a#home-link.active {
 }
 
 :is(nav ul li a#leaderboard-link.active, nav ul li a#results-link.active) {
-  color: var(--green);
+  border-bottom: 1.5px solid var(--green);
 }
 
 nav ul li a#caugh-link.active {
-  color: var(--blue);
+  border-bottom: 1.5px solid var(--blue);
 }
 
 @media (min-width: 768px) {
@@ -167,6 +167,7 @@ nav ul li a#caugh-link.active {
     color: black;
     border-radius: 3px;
     font-weight: normal;
+    border-bottom: none;
   }
 
   a.active.active-green {
