@@ -7,7 +7,7 @@ const navBar = {
 
           <ul>
             <li>
-              <a href="/" id="home-link">Home</a>
+              <a id="home-link">Home</a>
             </li>
 
             <div class="nav-spacer">
@@ -29,6 +29,7 @@ const navBar = {
         `;
 
         const yearSelect = document.getElementById("year-select");
+        const homeLink = document.getElementById("home-link");
         const leaderboardLink = document.getElementById("leaderboard-link");
         const resultsLink = document.getElementById("results-link");
         const caughLink = document.getElementById("caugh-link");
@@ -37,9 +38,17 @@ const navBar = {
           const selectedYear = yearSelect.value;
           const displayYear =
             yearSelect.options[yearSelect.selectedIndex].dataset.display;
-          leaderboardLink.href = `/${selectedYear}/leaderboard`;
-          resultsLink.href = `/${selectedYear}/results`;
-          caughLink.href = `/${selectedYear}/caugh`;
+
+          // Determine the base path based on the environment
+          const basePath = window.location.hostname.includes("github.io")
+            ? "/golf"
+            : "";
+
+          homeLink.href = `${basePath}/index.html`;
+          leaderboardLink.href = `${basePath}/${selectedYear}/leaderboard.html`;
+          resultsLink.href = `${basePath}/${selectedYear}/results.html`;
+          caughLink.href = `${basePath}/${selectedYear}/caugh.html`;
+
           leaderboardLink.textContent = `Series Leaderboard ${displayYear}`;
           resultsLink.textContent = `Event Results ${displayYear}`;
           caughLink.textContent = `Caugh Challenge ${displayYear}`;
@@ -47,7 +56,11 @@ const navBar = {
 
         const setActiveLink = () => {
           const path = window.location.pathname;
-          if (path === "/") {
+          if (
+            path.endsWith("index.html") ||
+            path === "/" ||
+            path === "/golf/"
+          ) {
             document
               .getElementById("home-link")
               .classList.add("active", "active-green");
@@ -56,7 +69,7 @@ const navBar = {
           } else if (path.includes("results")) {
             resultsLink.classList.add("active", "active-yellow");
           } else if (path.includes("caugh")) {
-            caughLink.classList.add("active", "active-green");
+            caughLink.classList.add("active", "active-blue");
           }
         };
 
