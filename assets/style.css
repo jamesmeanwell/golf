@@ -3,6 +3,7 @@
   --blue: #2976e5;
   --yellow: #ffcf00;
   --charcoal: #1e1e1e;
+  --grey: #787878;
 }
 * {
   font-family: "bodoni-urw", serif;
@@ -131,10 +132,12 @@ nav ul li a#home-link.active {
 
 :is(nav ul li a#leaderboard-link.active, nav ul li a#results-link.active) {
   color: var(--green);
+  font-weight: bold;
 }
 
 nav ul li a#caugh-link.active {
   color: var(--blue);
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
