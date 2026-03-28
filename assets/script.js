@@ -68,7 +68,7 @@ const navBar = {
           } else if (path.includes("leaderboard")) {
             leaderboardLink.classList.add("active", "active-green");
           } else if (path.includes("results")) {
-            resultsLink.classList.add("active", "active-yellow");
+            resultsLink.classList.add("active", "active-green");
           } else if (path.includes("caugh")) {
             caughLink.classList.add("active", "active-blue");
           }
@@ -236,6 +236,9 @@ const ScorecardManager = {
         continue; // Skip to the next course if the tbody is not found
       }
 
+      // Check if the table has the 'no-points' class
+      const hasNoPointsClass = table.classList.contains("no-points");
+
       // Compute nets (and stableford) for every player
       NetScoreManager.calculateNetScores(
         courseData.players,
@@ -274,9 +277,9 @@ const ScorecardManager = {
           <td class="bold">${outTotal}</td>
           ${inScoresHtml}
           <td class="bold">${inTotal}</td>
-          <td class="bold">${total}</td>
+          <td class="total bold">${total}</td>
           <td class="net">${player.netScores.reduce((a, b) => a + b, 0)}</td>
-          <td class="bold stableford">${player.stablefordPoints}</td>
+          ${hasNoPointsClass ? "" : `<td class="bold stableford">${player.stablefordPoints}</td>`}
         `;
         tbody.appendChild(row);
       });
