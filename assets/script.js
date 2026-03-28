@@ -13,7 +13,8 @@ const navBar = {
             <div class="nav-spacer">
               <select class="nav" id="year-select">
                 <option value="2026" data-display="'26">2026</option>
-                <option value="2027" data-display="'27">2027</option>
+                <option value="2027" data-display="'27" disabled>2027</option>
+                <option value="2028" data-display="'28" disabled>2028</option>
               </select>
               <li>
                 <a id="leaderboard-link"></a>
@@ -204,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Scorecard Manager
 const ScorecardManager = {
   fetchAndRenderScorecard: function () {
-    fetch("/data/results.json")
+    fetch("../data/results.json")
       .then((response) => response.json())
       .then((data) => this.renderScorecard(data.courses))
       .catch((error) => console.error("Error fetching scorecard data:", error));
