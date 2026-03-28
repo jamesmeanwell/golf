@@ -1,28 +1,68 @@
 const navBar = {
-  getLinks: function () {
-    // Get current path depth
-    const path = window.location.pathname;
-    // If in a subfolder (e.g., /golf/pages/results), use ../ for root links
-    const isInPages = path.includes("/pages/");
-    const indexLink = isInPages ? "../index" : "index";
-    const eventsLink = isInPages ? "2026-events" : "pages/2026-events";
-    return { indexLink, eventsLink };
-  },
   insertNav: function () {
     document.addEventListener("DOMContentLoaded", () => {
-      const { indexLink, eventsLink } = this.getLinks();
       const navContainer = document.getElementById("nav-container");
       if (navContainer) {
         navContainer.innerHTML = `
+
           <ul>
             <li>
-              <a href="${indexLink}">Leaderboard</a>
+              <a href="/" id="home-link">Home</a>
             </li>
-            <li>
-              <a href="${eventsLink}">2026 Event Results</a>
-            </li>
+
+            <div class="nav-spacer">
+              <select class="nav" id="year-select">
+                <option value="2026" data-display="'26">2026</option>
+                <option value="2027" data-display="'27">2027</option>
+              </select>
+              <li>
+                <a id="leaderboard-link"></a>
+              </li>
+              <li>
+                <a id="results-link"></a>
+              </li>
+              <li>
+                <a id="caugh-link"></a>
+              </li>
+            </div>
           </ul>
         `;
+
+        const yearSelect = document.getElementById("year-select");
+        const leaderboardLink = document.getElementById("leaderboard-link");
+        const resultsLink = document.getElementById("results-link");
+        const caughLink = document.getElementById("caugh-link");
+
+        const updateLinks = () => {
+          const selectedYear = yearSelect.value;
+          const displayYear =
+            yearSelect.options[yearSelect.selectedIndex].dataset.display;
+          leaderboardLink.href = `/${selectedYear}/leaderboard`;
+          resultsLink.href = `/${selectedYear}/results`;
+          caughLink.href = `/${selectedYear}/caugh`;
+          leaderboardLink.textContent = `Series Leaderboard ${displayYear}`;
+          resultsLink.textContent = `Event Results ${displayYear}`;
+          caughLink.textContent = `Caugh Challenge ${displayYear}`;
+        };
+
+        const setActiveLink = () => {
+          const path = window.location.pathname;
+          if (path === "/") {
+            document
+              .getElementById("home-link")
+              .classList.add("active", "active-green");
+          } else if (path.includes("leaderboard")) {
+            leaderboardLink.classList.add("active", "active-green");
+          } else if (path.includes("results")) {
+            resultsLink.classList.add("active", "active-yellow");
+          } else if (path.includes("caugh")) {
+            caughLink.classList.add("active", "active-green");
+          }
+        };
+
+        yearSelect.addEventListener("change", updateLinks);
+        updateLinks(); // Initialize links on page load
+        setActiveLink(); // Set active link on page load
       }
     });
   },
@@ -151,7 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // Scorecard Manager
 const ScorecardManager = {
   fetchAndRenderScorecard: function () {
-    fetch("../data/results.json")
+    fetch("/data/results.json")
       .then((response) => response.json())
       .then((data) => this.renderScorecard(data.courses))
       .catch((error) => console.error("Error fetching scorecard data:", error));
@@ -165,11 +205,22 @@ const ScorecardManager = {
       gm2026: document.getElementById("scorecard-gm-2026"),
       cgimIsl2026: document.getElementById("scorecard-cgim-isl-2026"),
       cgimIre2026: document.getElementById("scorecard-cgim-ire-2026"),
+      caugh2026: document.getElementById("scorecard-caugh-2026"),
       // Add other courses as needed
     };
 
     for (const [courseName, courseData] of Object.entries(courses)) {
-      const tbody = tables[courseName].querySelector("tbody");
+      const table = tables[courseName];
+      if (!table) {
+        console.warn(`Table for ${courseName} not found.`);
+        continue; // Skip to the next course if the table is not found
+      }
+
+      const tbody = table.querySelector("tbody");
+      if (!tbody) {
+        console.warn(`Tbody for ${courseName} not found.`);
+        continue; // Skip to the next course if the tbody is not found
+      }
 
       // Compute nets (and stableford) for every player
       NetScoreManager.calculateNetScores(
@@ -316,27 +367,32 @@ document.addEventListener("DOMContentLoaded", function () {
   // Function to show the selected section
   function showSection(selectedId) {
     for (let id in sections) {
-      sections[id].style.display = id === selectedId ? "block" : "none";
+      if (sections[id]) {
+        // Check if the section exists
+        sections[id].style.display = id === selectedId ? "block" : "none";
+      }
     }
   }
 
-  // Check if there's a hash in the URL
-  const hash = window.location.hash.substring(1); // Remove the '#' from the hash
-  if (hash && sections[hash]) {
-    showSection(hash);
-    selector.value = hash;
-  } else {
-    // Set default visible section
-    showSection("event-1");
-    selector.value = "event-1";
-  }
+  if (selector) {
+    // Check if there's a hash in the URL
+    const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+    if (hash && sections[hash]) {
+      showSection(hash);
+      selector.value = hash;
+    } else {
+      // Set default visible section
+      showSection("event-1");
+      selector.value = "event-1";
+    }
 
-  // Event listener for dropdown change
-  selector.addEventListener("change", function () {
-    showSection(this.value);
-    // Update the URL hash without reloading the page
-    window.history.pushState(null, null, `#${this.value}`);
-  });
+    // Event listener for dropdown change
+    selector.addEventListener("change", function () {
+      showSection(this.value);
+      // Update the URL hash without reloading the page
+      window.history.pushState(null, null, `#${this.value}`);
+    });
+  }
 });
 
 // Sort individual event scorecards by total, net, or points
@@ -361,13 +417,18 @@ const TableSorter = {
 
   sortTable: function (table, columnIndex, isDescending) {
     const tbody = table.querySelector("tbody");
+    if (!tbody) return; // Skip if tbody doesn't exist
     const rows = Array.from(tbody.querySelectorAll("tr")).filter(
       (row) => !row.id,
     );
 
     rows.sort((a, b) => {
-      const aText = a.cells[columnIndex].textContent.trim();
-      const bText = b.cells[columnIndex].textContent.trim();
+      const aCell = a.cells[columnIndex];
+      const bCell = b.cells[columnIndex];
+      if (!aCell || !bCell) return 0; // Skip if cells don't exist
+
+      const aText = aCell.textContent.trim();
+      const bText = bCell.textContent.trim();
       const aValue = aText === "—" ? Infinity : parseFloat(aText);
       const bValue = bText === "—" ? Infinity : parseFloat(bText);
 

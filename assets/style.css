@@ -2,6 +2,7 @@
   --green: #13b05d;
   --blue: #2976e5;
   --yellow: #ffcf00;
+  --charcoal: #1e1e1e;
 }
 * {
   font-family: "bodoni-urw", serif;
@@ -20,11 +21,10 @@ body {
 }
 
 h1 {
-  font-size: 2rem;
-  color: var(--green);
+  font-size: 1.25rem;
 }
 
-h2 {
+:is(h1, h2) {
   margin-top: 4rem;
   font-size: 1.25rem;
 }
@@ -82,23 +82,95 @@ nav {
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
+nav div.nav-spacer {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+nav select {
+  width: 100%;
+  margin: 0 0.5rem 0 0;
+  padding: 0.125rem 0;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+  border-bottom: none;
+}
+
+nav ul li {
+  margin: 0.25rem 0.5rem 0.25rem 0;
+}
+
 nav ul li a {
+  padding: 0.25rem 0.5rem;
   text-decoration: none;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  nav ul {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav div.nav-spacer {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  nav select {
+    width: auto;
+  }
+
+  nav ul li {
+    margin: 0.5rem;
+  }
+
+  a.active {
+    padding: 0.25rem 0.5rem !important;
+    color: black;
+    border-radius: 3px;
+    font-weight: normal;
+  }
+
+  a.active.active-green {
+    background-color: var(--green);
+  }
+
+  a.active.active-blue {
+    background-color: var(--blue);
+  }
+
+  a.active.active-yellow {
+    background-color: var(--yellow);
+  }
 }
 
 a,
 a:visited {
-  padding: 0.25rem 1rem;
-  background-color: var(--green);
   color: black;
-  border-radius: 4px;
+}
+
+:is(a[id], a[id]:visited, ) {
+  color: black;
+  padding: 0;
+  margin: 0;
 }
 
 div.container {
@@ -168,9 +240,9 @@ select {
   border: none;
   border-bottom: 1px solid var(--green);
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 0 0 0.5rem 0;
   font-size: 1.25rem;
-  margin-top: 2.5rem;
+  margin-top: 0;
   background-color: transparent;
   border-radius: 0;
 }
@@ -350,4 +422,32 @@ table#leaderboard-table tr td {
 
 :is(th.total, th.net, th.points) {
   cursor: pointer;
+}
+
+:is(
+  table.historical-winners,
+  table.historical-winners th,
+  table.historical-winners td,
+  table.historical-winners thead,
+  table.historical-winners tbody,
+  table.historical-winners tr,
+
+) {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--charcoal);
+  padding: 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 14px;
+}
+
+table.historical-winners thead th {
+  background-color: var(--charcoal);
+  color: white;
+  font-weight: bold;
+}
+
+:is(table.historical-winners tbody, table.historical-winners thead) {
+  border: 1px solid var(--charcoal);
 }
