@@ -51,7 +51,7 @@ const navBar = {
           caughLink.href = `${basePath}/${selectedYear}/caugh.html`;
 
           leaderboardLink.textContent = `Series Leaderboard ${displayYear}`;
-          resultsLink.textContent = `Event Scores ${displayYear}`;
+          resultsLink.textContent = `Series Results ${displayYear}`;
           caughLink.textContent = `Caugh Challenge ${displayYear}`;
         };
 
