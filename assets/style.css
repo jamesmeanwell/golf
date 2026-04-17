@@ -132,7 +132,7 @@ nav ul li a#home-link.active {
   color: black;
   border-radius: 3px;
   font-weight: normal;
-  background-color: var(--yellow);
+  background-color: var(--green);
 }
 
 :is(nav ul li a#leaderboard-link.active, nav ul li a#results-link.active) {
@@ -298,7 +298,7 @@ table {
 th,
 td {
   border: 1px solid #1e1e1e;
-  padding: 0.75rem;
+  padding: 0.75rem 0.5rem;
   text-align: center;
   vertical-align: middle;
 }
@@ -311,7 +311,7 @@ thead th {
 td,
 th,
 td span {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 :is(tr#hc th, tr#par th, tr#hc td, tr#par td) {

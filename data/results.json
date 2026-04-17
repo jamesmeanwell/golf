@@ -79,14 +79,7 @@
       "indexValues": [
         1, 9, 3, 17, 5, 11, 7, 15, 13, 2, 14, 12, 10, 4, 16, 6, 8, 18
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
-        }
-      ]
+      "players": []
     },
     "lachute2W2026": {
       "parValues": [5, 3, 4, 5, 3, 4, 4, 4, 4, 3, 4, 4, 5, 4, 4, 4, 3, 5],
@@ -121,74 +114,7 @@
       "indexValues": [
         4, 12, 8, 14, 2, 18, 10, 16, 6, 17, 11, 3, 9, 7, 1, 13, 15, 5
       ],
-      "players": [
-        {
-          "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "J. Dabrowski",
-          "handicap": 20,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "J. G",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "N. Kasturi",
-          "handicap": 12,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "A. Lavoie",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "E. Marinacci",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "J. Meanwell",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "S. Parsons",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "A. Sheaf",
-          "handicap": 12,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "T. Vu",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "B. Williams",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        }
-      ]
+      "players": []
     }
   }
 }
