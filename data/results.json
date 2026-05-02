@@ -122,6 +122,12 @@
           "inScores": [4, 5, 6, 5, 4, 4, 4, 3, 6]
         },
         {
+          "name": "E. Marinacci",
+          "handicap": 21,
+          "outScores": [6, 4, 5, 4, 8, 5, 4, 4, 5],
+          "inScores": [6, 6, 4, 5, 5, 6, 5, 4, 6]
+        },
+        {
           "name": "A. Sheaf",
           "handicap": 13,
           "outScores": [7, 4, 5, 3, 9, 3, 7, 3, 5],
