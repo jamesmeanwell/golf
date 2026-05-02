@@ -19,12 +19,6 @@
           "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
         },
         {
-          "name": "J. G",
-          "handicap": 0,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-        },
-        {
           "name": "N. Kasturi",
           "handicap": 12,
           "outScores": [5, 5, 4, 3, 4, 4, 4, 5, 3],
@@ -114,7 +108,32 @@
       "indexValues": [
         4, 12, 8, 14, 2, 18, 10, 16, 6, 17, 11, 3, 9, 7, 1, 13, 15, 5
       ],
-      "players": []
+      "players": [
+        {
+          "name": "B. Williams",
+          "handicap": 0,
+          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
+          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
+        },
+        {
+          "name": "A. Sheaf",
+          "handicap": 0,
+          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
+          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
+        },
+        {
+          "name": "D. Bourdeau",
+          "handicap": 0,
+          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
+          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
+        },
+        {
+          "name": "E. Marinacci",
+          "handicap": 0,
+          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
+          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
+        }
+      ]
     }
   }
 }
