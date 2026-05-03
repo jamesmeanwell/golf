@@ -483,11 +483,11 @@ td span.two-strokes::after {
   right: -6px;
 }
 
-table.sortable th:first-child {
+/*table.sortable th:first-child {
   position: sticky;
   left: 0;
   z-index: 1;
-}
+}*/
 
 /* Leaderboard Table */
 table#leaderboard-table caption {
