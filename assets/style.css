@@ -4,9 +4,47 @@
   --yellow: #ffcf00;
   --charcoal: #1e1e1e;
   --grey: #787878;
+  --white: #ffffff;
 }
+
+@font-face {
+  font-family: "Favorit";
+  src: url(/assets/abc-favorit/ABCFavorit-Regular-Trial.otf);
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url(/assets/abc-favorit/ABCFavorit-Bold-Trial.otf);
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url(/assets/abc-favorit/ABCFavorit-RegularItalic-Trial.otf);
+  font-style: italic;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url(/assets/abc-favorit/ABCFavorit-Light-Trial.otf);
+  font-style: normal;
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: "Favorit";
+  src: url(/assets/abc-favorit/ABCFavorit-LightItalic-Trial.otf);
+  font-style: italic;
+  font-weight: 100;
+}
+
 * {
   font-family: "bodoni-urw", serif;
+  font-family: "Favorit", "Helvetica", "Arial", sans-serif;
   font-size: 1.125rem;
 }
 
@@ -42,6 +80,11 @@ iframe {
 p {
   font-size: 1.25rem;
 }
+
+p > strong {
+  font-size: 1.25rem;
+}
+
 :is(p, h1, h2, h3 h4, h5 h6) {
   margin: 2.5rem 0;
 }
@@ -50,13 +93,29 @@ p {
   font-size: 1.25rem;
 }
 
+.large-text > strong {
+  font-size: 1.25rem;
+}
+
 .small-text {
   font-size: 1rem;
   margin-top: 0;
 }
 
+.small-text > strong {
+  font-size: 1rem;
+}
+
 .event-title {
   margin: 0;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.light {
+  font-weight: 100;
 }
 
 .green {
@@ -75,10 +134,23 @@ p {
   color: #787878;
 }
 
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-green {
+  background-color: var(--green);
+}
+
+.bg-yellow {
+  background-color: var(--yellow);
+}
+
 nav {
   max-width: 1000px;
   margin: auto;
   padding: 2rem 2rem 0 2rem;
+  font-weight: 100;
 }
 
 nav ul {
@@ -128,19 +200,18 @@ nav ul li a {
 }
 
 nav ul li a#home-link.active {
-  padding: 0.25rem 0.5rem;
-  color: black;
-  border-radius: 3px;
-  font-weight: normal;
-  background-color: var(--green);
+  background-color: black;
+  color: var(--white);
+  font-weight: bold;
+  padding: 0px 4px;
 }
 
 :is(nav ul li a#leaderboard-link.active, nav ul li a#results-link.active) {
-  border-bottom: 1.5px solid var(--green);
+  font-weight: bold;
 }
 
 nav ul li a#caugh-link.active {
-  border-bottom: 1.5px solid var(--blue);
+  font-weight: bold;
 }
 
 @media (min-width: 768px) {
@@ -162,28 +233,29 @@ nav ul li a#caugh-link.active {
     margin: 0.5rem;
   }
 
+  nav ul li:first-child {
+    margin: 0.5rem 0;
+  }
+
   :is(
     nav ul li a#leaderboard-link.active,
     nav ul li a#results-link.active,
     nav ul li a#caugh-link.active
   ) {
-    padding: 0.25rem 0.5rem;
-    color: black;
-    border-radius: 3px;
-    font-weight: normal;
-    border-bottom: none;
+    padding: 0 4px;
+    font-weight: bold;
   }
 
   a.active.active-green {
-    background-color: var(--green);
+    background-color: var(--white);
   }
 
   a.active.active-blue {
-    background-color: var(--blue);
+    background-color: var(--white);
   }
 
   a.active.active-yellow {
-    background-color: var(--yellow);
+    background-color: var(--white);
   }
 }
 
@@ -250,15 +322,15 @@ ul.golf li.prize::before {
 }
 
 select {
-  color: var(--green);
   border: none;
-  border-bottom: 1px solid var(--green);
+  border-bottom: 1px solid black;
   width: 100%;
   padding: 0 0 0.5rem 0;
   font-size: 1.25rem;
   margin-top: 0;
   background-color: transparent;
   border-radius: 0;
+  font-weight: 100;
 }
 
 footer {
@@ -304,7 +376,7 @@ td {
 }
 
 thead th {
-  background-color: var(--blue);
+  background-color: transparent;
   color: black;
 }
 
@@ -315,7 +387,7 @@ td span {
 }
 
 :is(tr#hc th, tr#par th, tr#hc td, tr#par td) {
-  color: #787878;
+  color: var(--white);
 }
 
 :is(td.eagle, td.double-bogey) {
@@ -344,26 +416,26 @@ td.double-bogey::before {
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  border: 1.5px solid transparent;
+  border: 0.25px solid transparent;
   z-index: -1;
 }
 
 td.birdie::before {
-  border-color: var(--yellow);
+  border-color: var(--white);
 }
 
 td.eagle::before {
-  background-color: var(--yellow);
+  background-color: var(--white);
 }
 
 td.bogey::before {
   border-radius: 0;
-  border-color: var(--yellow);
+  border-color: var(--white);
 }
 
 td.double-bogey::before {
   border-radius: 0;
-  background-color: var(--yellow);
+  background-color: var(--white);
 }
 
 tr.player:hover {
@@ -409,6 +481,12 @@ td span.two-strokes::before {
 td span.two-strokes::after {
   top: -10px;
   right: -6px;
+}
+
+table.sortable th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
 }
 
 /* Leaderboard Table */

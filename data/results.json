@@ -7,21 +7,21 @@
       ],
       "players": [
         {
+          "name": "Ghost",
+          "handicap": 0,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+        },
+        {
           "name": "D. Bourdeau",
-          "handicap": 4,
-          "outScores": [3, 6, 7, 3, 4, 4, 4, 5, 3],
-          "inScores": [2, 5, 3, 5, 4, 3, 4, 3, 5]
+          "handicap": 13,
+          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
+          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
         },
         {
           "name": "J. Dabrowski",
           "handicap": 20,
           "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-        },
-        {
-          "name": "N. Kasturi",
-          "handicap": 12,
-          "outScores": [5, 5, 4, 3, 4, 4, 4, 5, 3],
           "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
         },
         {
@@ -31,14 +31,8 @@
           "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
         },
         {
-          "name": "E. Marinacci",
-          "handicap": 0,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-        },
-        {
           "name": "J. Meanwell",
-          "handicap": 0,
+          "handicap": 8,
           "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
           "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
         },
@@ -50,12 +44,12 @@
         },
         {
           "name": "A. Sheaf",
-          "handicap": 12,
+          "handicap": 13,
           "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
           "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
         },
         {
-          "name": "T. Vu",
+          "name": "J. Simmons",
           "handicap": 0,
           "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
           "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
@@ -116,7 +110,7 @@
           "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
         },
         {
-          "name": "D. Bourdeau",
+          "name": "D. Bourdeau 🔥",
           "handicap": 13,
           "outScores": [6, 4, 7, 3, 5, 3, 4, 4, 6],
           "inScores": [4, 5, 6, 5, 4, 4, 4, 3, 6]
