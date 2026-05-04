@@ -7,12 +7,6 @@
       ],
       "players": [
         {
-          "name": "Ghost",
-          "handicap": 0,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
-        },
-        {
           "name": "D. Bourdeau",
           "handicap": 13,
           "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
@@ -104,25 +98,19 @@
       ],
       "players": [
         {
-          "name": "Ghost",
-          "handicap": 0,
-          "outScores": [5, 4, 4, 3, 5, 3, 4, 3, 4],
-          "inScores": [3, 4, 4, 4, 4, 4, 4, 3, 5]
-        },
-        {
-          "name": "D. Bourdeau 🔥",
+          "name": " 🔥 D. Bourdeau (13)",
           "handicap": 13,
           "outScores": [6, 4, 7, 3, 5, 3, 4, 4, 6],
           "inScores": [4, 5, 6, 5, 4, 4, 4, 3, 6]
         },
         {
-          "name": "E. Marinacci",
+          "name": "E. Marinacci (21)",
           "handicap": 21,
           "outScores": [6, 4, 5, 4, 8, 5, 4, 4, 5],
           "inScores": [6, 6, 4, 5, 5, 6, 5, 4, 6]
         },
         {
-          "name": "A. Sheaf",
+          "name": "A. Sheaf (13)",
           "handicap": 13,
           "outScores": [7, 4, 5, 3, 9, 3, 7, 3, 5],
           "inScores": [4, 4, 5, 5, 5, 6, 5, 5, 6]

@@ -369,7 +369,7 @@ table {
 
 th,
 td {
-  border: 1px solid #1e1e1e;
+  border: 0.25px solid black;
   padding: 0.75rem;
   text-align: center;
   vertical-align: middle;
@@ -383,7 +383,7 @@ thead th {
 td,
 th,
 td span {
-  font-size: 10px;
+  font-size: 12px;
 }
 
 :is(tr#hc th, tr#par th, tr#hc td, tr#par td) {
@@ -483,11 +483,19 @@ td span.two-strokes::after {
   right: -6px;
 }
 
-/*table.sortable th:first-child {
+table.sortable.no-points th:first-child {
+  background-color: var(--blue);
   position: sticky;
   left: 0;
   z-index: 1;
-}*/
+}
+
+table.sortable th:first-child {
+  background-color: var(--green);
+  position: sticky;
+  left: 0;
+  z-index: 1;
+}
 
 /* Leaderboard Table */
 table#leaderboard-table caption {
@@ -501,7 +509,7 @@ table#leaderboard-table th {
   background-color: transparent;
   font-weight: 400;
   font-style: normal;
-  font-size: 1rem;
+  font-size: 0.75rem;
   text-transform: capitalize;
   color: black;
 }
