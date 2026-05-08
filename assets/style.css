@@ -9,41 +9,40 @@
 
 @font-face {
   font-family: "Favorit";
-  src: url(/assets/abc-favorit/ABCFavorit-Regular-Trial.otf);
+  src: url(abc-favorit/ABCFavorit-Regular-Trial.otf);
   font-style: normal;
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Favorit";
-  src: url(/assets/abc-favorit/ABCFavorit-Bold-Trial.otf);
+  src: url(abc-favorit/ABCFavorit-Bold-Trial.otf);
   font-style: normal;
   font-weight: bold;
 }
 
 @font-face {
   font-family: "Favorit";
-  src: url(/assets/abc-favorit/ABCFavorit-RegularItalic-Trial.otf);
+  src: url(abc-favorit/ABCFavorit-RegularItalic-Trial.otf);
   font-style: italic;
   font-weight: normal;
 }
 
 @font-face {
   font-family: "Favorit";
-  src: url(/assets/abc-favorit/ABCFavorit-Light-Trial.otf);
+  src: url(abc-favorit/ABCFavorit-Light-Trial.otf);
   font-style: normal;
   font-weight: 100;
 }
 
 @font-face {
   font-family: "Favorit";
-  src: url(/assets/abc-favorit/ABCFavorit-LightItalic-Trial.otf);
+  src: url(abc-favorit/ABCFavorit-LightItalic-Trial.otf);
   font-style: italic;
   font-weight: 100;
 }
 
 * {
-  font-family: "bodoni-urw", serif;
   font-family: "Favorit", "Helvetica", "Arial", sans-serif;
   font-size: 1.125rem;
 }
