@@ -9,50 +9,50 @@
         {
           "name": "D. Bourdeau",
           "handicap": 13,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "outScores": [5, 5, 6, 3, 7, 4, 5, 4, 3],
+          "inScores": [8, 7, 4, 7, 7, 5, 3, 3, 6]
         },
         {
           "name": "J. Dabrowski",
-          "handicap": 30,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "handicap": 35,
+          "outScores": [5, 11, 5, 4, 6, 5, 9, 8, 4],
+          "inScores": [8, 7, 6, 9, 5, 5, 7, 6, 7]
         },
         {
           "name": "A. Lavoie",
           "handicap": 26,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "outScores": [7, 8, 5, 4, 6, 7, 5, 9, 4],
+          "inScores": [5, 8, 4, 9, 6, 6, 8, 4, 8]
         },
         {
           "name": "J. Meanwell",
           "handicap": 8,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "outScores": [5, 4, 4, 6, 4, 3, 5, 4, 3],
+          "inScores": [5, 8, 3, 3, 4, 3, 5, 5, 5]
         },
         {
           "name": "S. Parsons",
-          "handicap": 18,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "handicap": 23,
+          "outScores": [4, 7, 5, 6, 7, 6, 7, 11, 4],
+          "inScores": [6, 9, 4, 6, 5, 4, 6, 3, 7]
         },
         {
           "name": "A. Sheaf",
           "handicap": 13,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "outScores": [5, 5, 7, 4, 3, 4, 5, 6, 5],
+          "inScores": [5, 6, 3, 6, 5, 3, 6, 4, 7]
         },
         {
           "name": "J. Simmons",
-          "handicap": 32,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "handicap": 36,
+          "outScores": [6, 9, 7, 4, 7, 8, 12, 10, 3],
+          "inScores": [8, 10, 6, 7, 11, 6, 9, 7, 8]
         },
         {
           "name": "B. Williams",
           "handicap": 23,
-          "outScores": [4, 5, 4, 3, 4, 4, 4, 5, 3],
-          "inScores": [4, 5, 3, 5, 4, 3, 4, 3, 5]
+          "outScores": [5, 7, 5, 4, 5, 8, 5, 6, 4],
+          "inScores": [7, 9, 3, 8, 6, 3, 6, 3, 8]
         }
       ]
     },
