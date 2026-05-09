@@ -103,18 +103,18 @@ const leaderBoardManager = {
         .slice(2)
         .map((cell) => parseInt(cell.textContent) || 0);
 
-      // Sort points in descending order and take the top 4
+      // Sort points in descending order and take the top 2
       const sortedPoints = [...points].sort((a, b) => b - a);
-      const topFourPoints = sortedPoints.slice(0, 4);
-      const totalPoints = topFourPoints.reduce((acc, curr) => acc + curr, 0);
+      const topTwoPoints = sortedPoints.slice(0, 2);
+      const totalPoints = topTwoPoints.reduce((acc, curr) => acc + curr, 0);
 
       // Apply strikethrough to the two lowest scores if there are six scores
       if (points.length === 6) {
-        const lowestTwo = sortedPoints.slice(-2);
+        const lowestTwo = sortedPoints.slice(-4);
         let strikeCount = 0;
         cells.forEach((cell, index) => {
           const cellValue = parseInt(cell.textContent);
-          if (lowestTwo.includes(cellValue) && strikeCount < 2) {
+          if (lowestTwo.includes(cellValue) && strikeCount < 4) {
             cell.style.textDecoration = "line-through";
             strikeCount++;
           } else {
