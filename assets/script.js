@@ -457,3 +457,65 @@ const TableSorter = {
 };
 
 document.addEventListener("DOMContentLoaded", () => TableSorter.init());
+
+//Leaderboard columns
+const StickyTable = {
+  init() {
+    this.table = document.getElementById("leaderboard-table");
+    if (!this.table) return; // Exit if the table is not found
+
+    this.makeColumnsSticky();
+    window.addEventListener("resize", () => this.makeColumnsSticky());
+  },
+
+  makeColumnsSticky() {
+    const firstColumnCells = this.table.querySelectorAll(
+      "th:first-child, td:first-child",
+    );
+    const secondColumnCells = this.table.querySelectorAll(
+      "th:nth-child(2), td:nth-child(2)",
+    );
+    const thirdColumnCells = this.table.querySelectorAll(
+      "th:nth-child(3), td:nth-child(3)",
+    );
+
+    this.resetStickyStyles(firstColumnCells);
+    this.resetStickyStyles(secondColumnCells);
+    this.resetStickyStyles(thirdColumnCells);
+
+    const firstColumnWidth = this.getColumnWidth(firstColumnCells);
+    const secondColumnWidth = this.getColumnWidth(secondColumnCells);
+    const thirdColumnWidth = this.getColumnWidth(thirdColumnCells);
+
+    this.applyStickyStyles(firstColumnCells, 0);
+    this.applyStickyStyles(secondColumnCells, firstColumnWidth);
+    this.applyStickyStyles(
+      thirdColumnCells,
+      firstColumnWidth + secondColumnWidth,
+    );
+  },
+
+  resetStickyStyles(cells) {
+    cells.forEach((cell) => {
+      cell.style.position = "";
+      cell.style.left = "";
+      cell.style.zIndex = "";
+      cell.style.backgroundColor = "";
+    });
+  },
+
+  getColumnWidth(cells) {
+    return cells[0].offsetWidth;
+  },
+
+  applyStickyStyles(cells, leftOffset) {
+    cells.forEach((cell) => {
+      cell.style.position = "sticky";
+      cell.style.left = `${leftOffset}px`;
+      cell.style.zIndex = "1";
+      cell.style.backgroundColor = "#ffcf00"; // Ensure the background is set to avoid overlap issues
+    });
+  },
+};
+
+document.addEventListener("DOMContentLoaded", () => StickyTable.init());

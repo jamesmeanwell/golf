@@ -511,7 +511,6 @@ table#leaderboard-table th {
   vertical-align: middle;
   background-color: transparent;
   font-weight: 400;
-  font-style: normal;
   font-size: 0.75rem;
   text-transform: capitalize;
   color: black;
@@ -521,6 +520,13 @@ table#leaderboard-table tr th,
 table#leaderboard-table tr td {
   border: none;
   border-bottom: 1px solid black;
+}
+
+:is(
+  table#leaderboard-table thead th.total,
+  table#leaderboard-table tbody tr td.total
+) {
+  font-weight: bold;
 }
 
 :is(th.total, th.net, th.points) {
