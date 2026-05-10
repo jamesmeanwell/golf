@@ -61,14 +61,112 @@
       "indexValues": [
         1, 9, 3, 17, 5, 11, 7, 15, 13, 2, 14, 12, 10, 4, 16, 6, 8, 18
       ],
-      "players": []
+      "players": [
+        {
+          "name": "D. Bourdeau",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Dabrowski",
+          "handicap": 35,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "A. Lavoie",
+          "handicap": 26,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Meanwell",
+          "handicap": 7,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "S. Parsons",
+          "handicap": 23,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "A. Sheaf",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Simmons",
+          "handicap": 36,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "B. Williams",
+          "handicap": 23,
+          "outScores": [],
+          "inScores": []
+        }
+      ]
     },
     "lachute2W2026": {
       "parValues": [5, 3, 4, 5, 3, 4, 4, 4, 4, 3, 4, 4, 5, 4, 4, 4, 3, 5],
       "indexValues": [
         17, 11, 15, 5, 13, 1, 9, 7, 3, 16, 10, 12, 8, 6, 4, 2, 14, 18
       ],
-      "players": []
+      "players": [
+        {
+          "name": "D. Bourdeau",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Dabrowski",
+          "handicap": 35,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "A. Lavoie",
+          "handicap": 26,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Meanwell",
+          "handicap": 7,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "S. Parsons",
+          "handicap": 23,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "A. Sheaf",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Simmons",
+          "handicap": 36,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "B. Williams",
+          "handicap": 23,
+          "outScores": [],
+          "inScores": []
+        }
+      ]
     },
     "gm2026": {
       "parValues": [5, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 3, 5, 4, 4, 3, 4],

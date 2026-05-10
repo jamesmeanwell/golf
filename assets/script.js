@@ -251,6 +251,14 @@ const ScorecardManager = {
       );
 
       courseData.players.forEach((player) => {
+        // Initialize scores with zeros if they are empty
+        player.outScores = player.outScores.length
+          ? player.outScores
+          : Array(9).fill(0);
+        player.inScores = player.inScores.length
+          ? player.inScores
+          : Array(9).fill(0);
+
         const outTotal = player.outScores.reduce((a, b) => a + b, 0);
         const inTotal = player.inScores.reduce((a, b) => a + b, 0);
         const total = outTotal + inTotal;
@@ -303,7 +311,9 @@ const ScorecardManager = {
   },
 
   getScoreClass: function (score, par) {
-    if (score === par - 1) {
+    if (score === 0) {
+      return ""; // No class for a score of 0
+    } else if (score === par - 1) {
       return SCORE_CLASSES.BIRDIE;
     } else if (score <= par - 2) {
       return SCORE_CLASSES.EAGLE;

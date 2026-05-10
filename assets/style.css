@@ -117,7 +117,7 @@ p > strong {
   font-weight: 100;
 }
 
-.bold {
+strong {
   font-weight: bold;
 }
 
@@ -135,6 +135,10 @@ p > strong {
 
 .grey {
   color: #787878;
+}
+
+.white {
+  color: var(--white);
 }
 
 .bg-blue {
@@ -294,33 +298,23 @@ li {
   padding: 0.125rem 0;
 }
 
-ul.golf li.where::before {
-  content: "📍 ";
-  margin-right: 0.5em;
-}
-
-ul.golf li.when::before {
-  content: "📆 ";
-  margin-right: 0.5em;
-}
-
-ul.golf li.golf::before {
-  content: "⛳️ ";
-  margin-right: 0.5em;
-}
-
-ul.golf li.score::before {
-  content: "🧮 ";
-  margin-right: 0.5em;
-}
-
-ul.golf li.money::before {
-  content: "💲 ";
-  margin-right: 0.5em;
-}
-
-ul.golf li.prize::before {
+ul li.purse::before {
   content: "💰";
+  margin-right: 0.5em;
+}
+
+ul li.cttp::before {
+  content: "🎯";
+  margin-right: 0.5em;
+}
+
+ul li.bomb::before {
+  content: "💣";
+  margin-right: 0.5em;
+}
+
+ul li.trophy::before {
+  content: "🏆";
   margin-right: 0.5em;
 }
 
@@ -334,6 +328,16 @@ select {
   background-color: transparent;
   border-radius: 0;
   font-weight: 100;
+}
+
+select#sectionSelector {
+  margin-top: 6rem;
+  font-size: 1rem;
+}
+
+:is(section#event-1, section#event-2, section#event-3, section#event-4)
+  .container {
+  padding-top: 0;
 }
 
 footer {
@@ -386,7 +390,7 @@ thead th {
 td,
 th,
 td span {
-  font-size: 12px;
+  font-size: 10px;
 }
 
 :is(tr#hc th, tr#par th, tr#hc td, tr#par td) {
