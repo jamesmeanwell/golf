@@ -294,28 +294,35 @@ ol {
 }
 
 li {
-  margin: 0;
-  padding: 0.125rem 0;
+  margin: 0.5rem 0;
+  padding: 0;
+}
+
+:is(ul li.purse, ul li.cttp, ul li.bomb, ul li.trophy) {
+  position: relative;
+  padding-left: 2rem; /* Adjust this value to create space for the emoji */
+}
+
+:is(ul li.purse, ul li.cttp, ul li.bomb, ul li.trophy)::before {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 ul li.purse::before {
   content: "💰";
-  margin-right: 0.5em;
 }
 
 ul li.cttp::before {
   content: "🎯";
-  margin-right: 0.5em;
 }
 
 ul li.bomb::before {
   content: "💣";
-  margin-right: 0.5em;
 }
 
 ul li.trophy::before {
-  content: "🏆";
-  margin-right: 0.5em;
+  content: "💸";
 }
 
 select {
