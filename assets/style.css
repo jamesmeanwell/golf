@@ -325,6 +325,10 @@ ul li.trophy::before {
   content: "💸";
 }
 
+ul.attempt li {
+  margin: 2rem 0;
+}
+
 select {
   border: none;
   border-bottom: 1px solid black;
