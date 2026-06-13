@@ -395,28 +395,45 @@ document.addEventListener("DOMContentLoaded", function () {
   function showSection(selectedId) {
     for (let id in sections) {
       if (sections[id]) {
-        // Check if the section exists
         sections[id].style.display = id === selectedId ? "block" : "none";
       }
     }
   }
 
+  // Determine the default event based on the current date
+  function getDefaultEvent() {
+    const currentDate = new Date();
+    const currentYear = currentDate.getFullYear();
+    const currentMonth = currentDate.getMonth(); // 0-indexed: 0 = January, 11 = December
+
+    if (currentYear === 2026) {
+      switch (currentMonth) {
+        case 5: // June
+          return "event-2";
+        case 6: // July
+          return "event-3";
+        case 7: // August
+          return "event-4";
+        default:
+          return "event-1";
+      }
+    }
+    return "event-1"; // Default event for other years
+  }
+
   if (selector) {
-    // Check if there's a hash in the URL
-    const hash = window.location.hash.substring(1); // Remove the '#' from the hash
+    const hash = window.location.hash.substring(1);
     if (hash && sections[hash]) {
       showSection(hash);
       selector.value = hash;
     } else {
-      // Set default visible section
-      showSection("event-1");
-      selector.value = "event-1";
+      const defaultEvent = getDefaultEvent();
+      showSection(defaultEvent);
+      selector.value = defaultEvent;
     }
 
-    // Event listener for dropdown change
     selector.addEventListener("change", function () {
       showSection(this.value);
-      // Update the URL hash without reloading the page
       window.history.pushState(null, null, `#${this.value}`);
     });
   }
