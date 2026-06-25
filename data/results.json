@@ -13,10 +13,22 @@
           "inScores": [8, 7, 4, 7, 7, 5, 3, 3, 6]
         },
         {
+          "name": "S. Buckley",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
           "name": "J. Dabrowski",
           "handicap": 35,
           "outScores": [5, 11, 5, 4, 6, 5, 9, 8, 4],
           "inScores": [8, 7, 6, 9, 5, 5, 7, 6, 7]
+        },
+        {
+          "name": "N. Kasturi",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
         },
         {
           "name": "A. Lavoie",
@@ -29,6 +41,12 @@
           "handicap": 7,
           "outScores": [5, 4, 4, 6, 4, 3, 5, 4, 3],
           "inScores": [5, 8, 3, 3, 4, 3, 5, 5, 5]
+        },
+        {
+          "name": "E. Marinacci",
+          "handicap": 21,
+          "outScores": [],
+          "inScores": []
         },
         {
           "name": "S. Parsons",
@@ -69,8 +87,20 @@
           "inScores": []
         },
         {
+          "name": "S. Buckley",
+          "handicap": 19,
+          "outScores": [],
+          "inScores": []
+        },
+        {
           "name": "J. Dabrowski",
           "handicap": 35,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "N. Kasturi",
+          "handicap": 13,
           "outScores": [],
           "inScores": []
         },
@@ -81,8 +111,20 @@
           "inScores": []
         },
         {
+          "name": "E. Marinacci",
+          "handicap": 21,
+          "outScores": [],
+          "inScores": []
+        },
+        {
           "name": "J. Meanwell",
-          "handicap": 7,
+          "handicap": 8,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "S. Palfery",
+          "handicap": 19,
           "outScores": [],
           "inScores": []
         },
@@ -94,13 +136,13 @@
         },
         {
           "name": "A. Sheaf",
-          "handicap": 13,
+          "handicap": 12,
           "outScores": [],
           "inScores": []
         },
         {
           "name": "J. Simmons",
-          "handicap": 36,
+          "handicap": 28,
           "outScores": [],
           "inScores": []
         },
