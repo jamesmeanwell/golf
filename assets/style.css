@@ -431,10 +431,10 @@ td.double-bogey::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  border: 0.25px solid transparent;
+  border: 0.75px solid transparent;
   z-index: -1;
 }
 
