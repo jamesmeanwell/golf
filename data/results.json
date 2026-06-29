@@ -83,50 +83,50 @@
         {
           "name": "D. Bourdeau",
           "handicap": 13,
-          "outScores": [5,3,7,5,4,7,4,4,5],
-          "inScores": [3,5,5,3,6,2,6,3,7]
+          "outScores": [5, 3, 7, 5, 4, 7, 4, 4, 5],
+          "inScores": [3, 5, 5, 3, 6, 2, 6, 3, 7]
         },
         {
           "name": "S. Buckley",
           "handicap": 19,
-          "outScores": [6,3,8,9,3,6,5,7,3],
-          "inScores": [5,5,4,3,6,4,3,5,6]
+          "outScores": [6, 3, 8, 9, 3, 6, 5, 7, 3],
+          "inScores": [5, 5, 4, 3, 6, 4, 3, 5, 6]
         },
         {
           "name": "J. Dabrowski",
           "handicap": 35,
-          "outScores": [7,4,6,5,3,6,8,8,5],
-          "inScores": [5,8,4,3,6,5,6,4,6]
+          "outScores": [7, 4, 6, 5, 3, 6, 8, 8, 5],
+          "inScores": [5, 8, 4, 3, 6, 5, 6, 4, 6]
         },
         {
           "name": "N. Kasturi",
           "handicap": 13,
-          "outScores": [6,5,6,9,5,4,4,4,4],
-          "inScores": [5,6,5,4,10,3,7,4,7]
+          "outScores": [6, 5, 6, 9, 5, 4, 4, 4, 4],
+          "inScores": [5, 6, 5, 4, 10, 3, 7, 4, 7]
         },
         {
           "name": "A. Lavoie",
           "handicap": 26,
-          "outScores": [5,4,9,5,7,5,5,7,5],
-          "inScores": [5,7,6,5,9,7,7,5,6]
+          "outScores": [5, 4, 9, 5, 7, 5, 5, 7, 5],
+          "inScores": [5, 7, 6, 5, 9, 7, 7, 5, 6]
         },
         {
           "name": "E. Marinacci",
           "handicap": 20,
-          "outScores": [9,3,7,8,4,5,4,5,4],
-          "inScores": [7,5,4,3,5,5,4,3,11]
+          "outScores": [9, 3, 7, 8, 4, 5, 4, 5, 4],
+          "inScores": [7, 5, 4, 3, 5, 5, 4, 3, 11]
         },
         {
           "name": "J. Meanwell",
           "handicap": 8,
-          "outScores": [5,3,5,5,4,4,4,6,3],
-          "inScores": [4,6,4,3,5,5,5,5,5]
+          "outScores": [5, 3, 5, 5, 4, 4, 4, 6, 3],
+          "inScores": [4, 6, 4, 3, 5, 5, 5, 5, 5]
         },
         {
           "name": "S. Palfery",
           "handicap": 19,
-          "outScores": [6,3,8,9,3,6,5,7,3],
-          "inScores": [5,5,4,3,6,4,3,5,6]
+          "outScores": [6, 3, 8, 9, 3, 6, 5, 7, 3],
+          "inScores": [5, 5, 4, 3, 6, 4, 3, 5, 6]
         },
         {
           "name": "S. Parsons",
@@ -137,20 +137,20 @@
         {
           "name": "A. Sheaf",
           "handicap": 12,
-          "outScores": [6,3,4,5,4,5,4,6,3],
-          "inScores": [5,7,4,3,5,5,4,3,5]
+          "outScores": [6, 3, 4, 5, 4, 5, 4, 6, 3],
+          "inScores": [5, 7, 4, 3, 5, 5, 4, 3, 5]
         },
         {
           "name": "J. Simmons",
           "handicap": 28,
-          "outScores": [7,5,10,5,5,6,5,6,6],
-          "inScores": [4,7,5,4,6,3,6,5,8]
+          "outScores": [7, 5, 10, 5, 5, 6, 5, 6, 6],
+          "inScores": [4, 7, 5, 4, 6, 3, 6, 5, 8]
         },
         {
           "name": "B. Williams",
           "handicap": 25,
-          "outScores": [9,7,8,10,4,4,6,8,7],
-          "inScores": [6,6,5,7,9,7,5,3,6]
+          "outScores": [9, 7, 8, 10, 4, 4, 6, 8, 7],
+          "inScores": [6, 6, 5, 7, 9, 7, 5, 3, 6]
         }
       ]
     },
@@ -211,7 +211,7 @@
       ]
     },
     "gm2026": {
-      "parValues": [5, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 3, 5, 4, 4, 3, 4],
+      "parValues": [5, 4, 4, 4, 3, 4, 4, 3, 4, 4, 4, 4, 3, 5, 4, 4, 3, 5],
       "indexValues": [
         7, 5, 9, 17, 15, 3, 11, 13, 1, 4, 8, 16, 14, 12, 18, 6, 10, 2
       ],
