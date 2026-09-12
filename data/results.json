@@ -218,51 +218,51 @@
       "players": [
         {
           "name": "J. Bielli",
-          "handicap": 13,
-          "outScores": [],
-          "inScores": []
+          "handicap": 22,
+          "outScores": [5,4,5,7,6,6,5,5,6],
+          "inScores": [5,7,6,5,6,7,5,4,5]
         },
         {
           "name": "S. Buckley",
-          "handicap": 13,
-          "outScores": [],
-          "inScores": []
+          "handicap": 17,
+          "outScores": [5,5,3,6,5,4,5,3,5],
+          "inScores": [5,5,4,5,4,6,5,3,7]
         },
         {
           "name": "J. Dabrowski",
           "handicap": 32,
-          "outScores": [],
-          "inScores": []
+          "outScores": [7,6,6,7,8,5,7,3,6],
+          "inScores": [10,7,4,7,6,4,8,1,5]
         },
         {
           "name": "N. Kasturi",
           "handicap": 13,
-          "outScores": [],
-          "inScores": []
+          "outScores": [4,5,3,9,6,4,5,4,7],
+          "inScores": [5,5,4,5,5,5,7,3,6]
         },
         {
           "name": "A. Lavoie",
           "handicap": 21,
-          "outScores": [],
-          "inScores": []
+          "outScores": [4,5,4,6,5,5,5,3,5],
+          "inScores": [5,5,3,6,5,5,7,5,5]
         },
         {
           "name": "J. Meanwell",
           "handicap": 9,
-          "outScores": [],
-          "inScores": []
+          "outScores": [4,4,3,5,4,4,4,4,4],
+          "inScores": [5,4,3,6,4,4,4,3,4]
         },
         {
           "name": "A. Sheaf",
           "handicap": 10,
-          "outScores": [],
-          "inScores": []
+          "outScores": [4,5,4,5,4,4,4,3,4],
+          "inScores": [4,4,3,5,5,5,4,3,5]
         },
         {
           "name": "J. Simmons",
-          "handicap": 36,
-          "outScores": [],
-          "inScores": []
+          "handicap": 27,
+          "outScores": [5,4,6,9,4,5,5,5,4],
+          "inScores": [7,9,3,9,6,5,6,3,3]
         }
       ]
     },
