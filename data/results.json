@@ -215,7 +215,56 @@
       "indexValues": [
         7, 1, 17, 9, 3, 13, 11, 15, 5, 8, 2, 18, 10, 4, 14, 12, 16, 6
       ],
-      "players": []
+      "players": [
+        {
+          "name": "J. Bielli",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "S. Buckley",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Dabrowski",
+          "handicap": 32,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "N. Kasturi",
+          "handicap": 13,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "A. Lavoie",
+          "handicap": 21,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Meanwell",
+          "handicap": 9,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "A. Sheaf",
+          "handicap": 10,
+          "outScores": [],
+          "inScores": []
+        },
+        {
+          "name": "J. Simmons",
+          "handicap": 36,
+          "outScores": [],
+          "inScores": []
+        }
+      ]
     },
     "cgimIsl2026": {
       "parValues": [4, 3, 4, 4, 4, 5, 4, 5, 3, 4, 3, 4, 4, 3, 5, 3, 4, 4],
