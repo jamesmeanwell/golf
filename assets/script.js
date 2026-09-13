@@ -411,7 +411,7 @@ document.addEventListener("DOMContentLoaded", function () {
           return "event-2";
         case 6: // July
           return "event-3";
-        case 7: // August
+        case 8: // August
           return "event-4";
         default:
           return "event-1";
