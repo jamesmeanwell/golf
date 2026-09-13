@@ -217,8 +217,7 @@ const ScorecardManager = {
       lachute1T2026: document.getElementById("scorecard-lachute-t-2026"),
       lachute2W2026: document.getElementById("scorecard-lachute-w-2026"),
       anjou2026: document.getElementById("scorecard-anjou-2026"),
-      cgimIsl2026: document.getElementById("scorecard-cgim-isl-2026"),
-      cgimIre2026: document.getElementById("scorecard-cgim-ire-2026"),
+      meadowbrook2026: document.getElementById("scorecard-meadowbrook-2026"),
       caugh2026: document.getElementById("scorecard-caugh-2026"),
       // Add other courses as needed
     };
